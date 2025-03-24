@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("./asset/fonts/helvetica-neue-5/HelveticaNeueLight.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("./asset/fonts/proxima-nova/ProximaNova-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+:root {
+  --color--brand-gradient-start: #ec4899; /* Pink */
+  --color--brand-gradient-end: #f97316;   /* Orange */
+  --custom-gradient: linear-gradient(to top right, var(--color--brand-gradient-start), var(--color--brand-gradient-end));
+}
