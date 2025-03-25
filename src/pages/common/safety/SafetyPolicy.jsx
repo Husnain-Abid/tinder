@@ -27,7 +27,7 @@ const SafetyPolicy = () => {
           <div className="mb-12">
 
 
-            <h1 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Safety And Policy Center</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Safety And Policy Center</h1>
 
 
             <h2 className="text-xl font-bold text-gray-900 mb-4">Our Commitment</h2>
@@ -371,12 +371,6 @@ const SafetyPolicy = () => {
               </p>
             </div>
           </div>
-
-
-
-
-
-
 
 
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Footer1 from '../../../components/common/Footer1'
 import { Link } from 'react-router-dom'
 import Navbar1 from '../../../components/common/Navbar1'
@@ -12,11 +12,16 @@ import plus6 from "../../../asset/platinum7.PNG"
 import plus7 from "../../../asset/platinum8.PNG"
 import plus8 from "../../../asset/platinum9.PNG"
 import plus9 from "../../../asset/platinum10.PNG"
+import LoginPopup from '../../../components/common/Login'
 
 export default function Gold() {
+
+  const [showPopup, setShowPopup] = useState(false)
+
+
   return (
 
-
+<>
 
     <div className="min-h-screen flex flex-col bg-white w-full">
 
@@ -29,12 +34,12 @@ export default function Gold() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 max-w-3xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl italic md:text-4xl font-bold text-gray-900 mb-6">
-              Go for Gold And See Who Likes You
+            Get Noticed by the People You Like With Tinder Platinum™
             </h1>
             <p className="text-left text-gray-600 mb-8">
-              It doesn’t matter if you’re looking for love, a date, or something casual. When there are only so many hours in a day for dating, a little intel goes a long way. Tinder Gold™ saves time by letting you see who Likes you. Match, pass, and expand photos to view full profiles with a simple tap and get more efficient with your time online. With all your admirers in one place, it’s the best way to get a free confidence boost while you meet new people.
+            Increase your match-making potential and enjoy most of Tinder’s premium features with Tinder Platinum™! Dating online just got easier. See someone you’d love to meet and can’t wait to match? As a Platinum subscriber, you can attach a note to every Super Like you send, increasing your match-making potential by up to 25%. And when you do—feel free to stand out in a major way by complimenting their photos or giving them your best opener. By making the first move, you can speed up the process and start to chat with people sooner.
             </p>
-            <button className="bg-tinder-red bg-red-500 text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors">
+            <button className="bg-tinder-red bg-red-500 text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors" onClick={() => setShowPopup(true)} >
               Join Now
             </button>
           </div>
@@ -197,7 +202,7 @@ export default function Gold() {
 
         {/* Get Started Button */}
         <div className="flex justify-center mb-12">
-          <button className="bg-tinder-red bg-red-400 text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors">
+          <button onClick={() => setShowPopup(true)} className="bg-tinder-red bg-red-400 text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors">
             Get Started
           </button>
         </div>
@@ -208,6 +213,13 @@ export default function Gold() {
 
 
     </div>
+
+
+    <LoginPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
+
+
+</>
+
 
 
 

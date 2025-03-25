@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import plus from "../../../asset/plus1.PNG"
 import Navbar1 from '../../../components/common/Navbar1'
 import Footer1 from '../../../components/common/Footer1'
+import LoginPopup from '../../../components/common/Login'
 
 export default function Plus() {
+
+    const [showPopup, setShowPopup] = useState(false)
+  
+
   return (
+<>
 
     <div className="min-h-screen flex flex-col bg-white w-full">
 
@@ -126,7 +132,7 @@ export default function Plus() {
 
           {/* Get Started Button */}
           <div className="flex justify-center mb-12">
-            <button className="bg-tinder-red bg-red-400 text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors">
+            <button onClick={() => setShowPopup(true)} className="bg-tinder-red bg-red-400 text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors">
               Get Started
             </button>
           </div>
@@ -141,6 +147,12 @@ export default function Plus() {
 
 
     </div>
+
+
+    <LoginPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
+
+
+</>
 
 
 

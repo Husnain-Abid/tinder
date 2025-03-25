@@ -1,11 +1,19 @@
+import { useState } from 'react'
 import product1 from '../../../asset/logo1.PNG'
 import product2 from '../../../asset/logo2.PNG'
 import product3 from '../../../asset/logo3.PNG'
 import Footer1 from '../../../components/common/Footer1'
+import LoginPopup from '../../../components/common/Login'
 import Navbar1 from '../../../components/common/Navbar1'
 
 const Subscription = () => {
+
+  const [showPopup, setShowPopup] = useState(false)
+
+
   return (
+<>
+
     <div className="min-h-screen  ">
 
       <Navbar1 />
@@ -298,7 +306,7 @@ const Subscription = () => {
 
         {/* Get Started Button */}
         <div className="flex justify-center mt-12 mb-8">
-          <button className="bg-tinder-red bg-red-400 text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors">
+          <button onClick={() => setShowPopup(true)}  className="bg-tinder-red bg-red-400 text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors">
             Get Started
           </button>
         </div>
@@ -310,7 +318,16 @@ const Subscription = () => {
       <Footer1 />
 
     </div>
-  )
+
+    <LoginPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
+
+    
+</>
+
+  
+
+
+)
 }
 
 export default Subscription

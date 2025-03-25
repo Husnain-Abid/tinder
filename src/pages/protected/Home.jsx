@@ -30,7 +30,7 @@ const HomeAfterLogin = () => {
 
 
     return (
-        <div className="flex h-screen bg-gray-100">
+        <div className="flex min-h-screen bg-gray-100">
             {/* Left Sidebar */}
             <div className="w-full max-w-sm  bg-white shadow-md">
                 {/* Top Navigation */}
@@ -122,7 +122,7 @@ const HomeAfterLogin = () => {
                     <p className="text-gray-600 mb-4">Find people with similar relationship goals</p>
 
                     {/* Relationship Goals Grid */}
-                    <div className="grid grid-cols-2 gap-4 overflow-y-auto max-h-[85vh] ">
+                    <div className="grid grid-cols-2 gap-4 overflow-y-auto no-scrollbar max-h-[85vh] ">
                         {/* Long-term partner */}
                         <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
                             <div className="mb-auto">
@@ -524,6 +524,7 @@ const HomeAfterLogin = () => {
                         </div>
 
                     </div>
+                    
                 </div>
 
             </div>

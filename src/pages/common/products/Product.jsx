@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../../../components/common/Navbar'
 import Footer from '../../../components/common/Footer'
 import Navbar1 from '../../../components/common/Navbar1'
@@ -7,10 +7,17 @@ import product1 from '../../../asset/product1.webp'
 import product2 from '../../../asset/product2.webp'
 import product3 from '../../../asset/product3.webp'
 import Footer1 from '../../../components/common/Footer1'
+import LoginPopup from '../../../components/common/Login'
 
 
 export default function Product() {
+
+  const [showPopup, setShowPopup] = useState(false)
+
+
+
   return (
+<>
 
     <div className="min-h-screen flex flex-col bg-white w-full">
       {/* Navigation Bar */}
@@ -103,7 +110,10 @@ export default function Product() {
 
         {/* Get Started Button */}
         <div className="flex justify-center mb-12">
-          <button className="bg-tinder-red text-white bg-red-400 px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors">
+          <button className="bg-tinder-red text-white bg-red-400 px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors"
+          onClick={() => setShowPopup(true)}
+          
+          >
             Get Started
           </button>
         </div>
@@ -134,6 +144,14 @@ export default function Product() {
 
 
     </div>
+
+
+
+  {/* Responsive Mobile Menu */}
+  <LoginPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
+
+</>
+
 
 
   )

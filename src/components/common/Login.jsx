@@ -1,8 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import logo from "../../asset/apple-store.png";
 import logo1 from "../../asset/download.png";
 
 const LoginPopup = ({ isOpen, onClose }) => {
-  if (!isOpen) return null
+  // Ensure useNavigate is always called, even when the popup is closed
+  const navigate = useNavigate(); // Initialize the useNavigate hook
+
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -63,12 +67,9 @@ const LoginPopup = ({ isOpen, onClose }) => {
 
         {/* Google login button */}
         <button className="flex items-center justify-center w-full py-1.5 px-4 rounded-full border bg-blue-500 text-white border-gray-300 mb-2 relative">
-          <div className="absolute left-2 flex items-center justify-center">
-
-          </div>
-          <div className="flex-grow text-center  ">
+          <div className="absolute left-2 flex items-center justify-center"></div>
+          <div className="flex-grow text-center" onClick={() => navigate("/home")}>
             <span className="font-medium">Continue with Google</span>
-
           </div>
           <div className="absolute left-0.5 rounded-full p-2 bg-white ">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
@@ -146,8 +147,7 @@ const LoginPopup = ({ isOpen, onClose }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LoginPopup
-
+export default LoginPopup;

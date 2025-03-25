@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import hero from '../../asset/select1.webp';
+import hero1 from '../../asset/select-logo.svg';
 
 export default function Hero2() {
     const [opacity, setOpacity] = useState(1); // State to manage opacity
@@ -38,18 +39,33 @@ export default function Hero2() {
 
             {/* Hero Text with Opacity Effect */}
             <div
-                className="relative h-full flex flex-col gap-8 items-center justify-center transition-opacity duration-500"
-                style={{ opacity }}  // Applying opacity from state
+                className="relative h-full flex flex-col gap-4 items-center justify-center max-w-md mx-auto transition-opacity duration-500"
             >
-                <h1 className="text-white text-5xl md:text-8xl font-bold text-center px-4">
+                {/* <h1 className="text-white text-5xl md:text-8xl font-bold text-center px-4">
                     Start something epic.
-                </h1>
-                <button 
-                    className='rounded-full px-6 py-3 text-white transition-opacity duration-500' 
-                    style={{ background: "var(--custom-gradient)", opacity }}
+                </h1> */}
+
+<img src={hero1} alt="hero" className='w-full' />
+
+                <p
+                    className='px-6 py-3 text-white transition-opacity duration-500'
                 >
-                    Create account
+                    Tinder SELECT™ is an exclusive membership that gives you unrivaled access to the absolute best of Tinder.
+                </p>
+
+
+                <button
+                    className='rounded-full px-20 py-3 text-xl font-bold bg-[#3c444f] text-[#656e6e] transition-opacity duration-500'
+                >
+                    Apply Now
                 </button>
+                <p
+                    className='px-6 py-3 text-gray-300 text-sm text-center font-thin transition-opacity duration-500'
+                >
+                    Sorry, we're currently not accepting applications. We apologize for any inconvenience caused. Please continue to check this page for updates on when applications will open. If you have any other questions, feel free to ask. Thank you!
+                </p>
+
+
             </div>
         </div>
     );

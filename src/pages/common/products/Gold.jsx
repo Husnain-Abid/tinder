@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Footer1 from '../../../components/common/Footer1'
 import { Link } from 'react-router-dom'
 import Navbar1 from '../../../components/common/Navbar1'
@@ -9,11 +9,16 @@ import plus3 from "../../../asset/gold4.PNG"
 import plus4 from "../../../asset/gold5.PNG"
 import plus5 from "../../../asset/gold6.PNG"
 import plus6 from "../../../asset/gold7.PNG"
+import LoginPopup from '../../../components/common/Login'
 
 export default function Gold() {
-  return (
+
+    const [showPopup, setShowPopup] = useState(false)
+  
 
 
+return (
+<>
 
     <div className="min-h-screen flex flex-col bg-white w-full">
 
@@ -172,7 +177,9 @@ export default function Gold() {
 
         {/* Get Started Button */}
         <div className="flex justify-center mb-12">
-          <button className="bg-tinder-red bg-red-400 text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors">
+          <button className="bg-tinder-red bg-red-400 text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors" 
+          onClick={() => setShowPopup(true)}  
+          >
             Get Started
           </button>
         </div>
@@ -183,6 +190,17 @@ export default function Gold() {
 
 
     </div>
+
+
+
+
+  {/* Responsive Mobile Menu */}
+  <LoginPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
+
+
+
+</>
+
 
 
 

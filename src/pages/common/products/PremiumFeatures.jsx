@@ -5,11 +5,16 @@ import product2 from '../../../asset/premium2.PNG'
 import product3 from '../../../asset/download1.PNG'
 import Navbar1 from "../../../components/common/Navbar1"
 import Footer1 from "../../../components/common/Footer1"
+import LoginPopup from "../../../components/common/Login"
+import { useState } from "react"
 
 
 
 const PlusFeatures = () => {
-  return (
+  const [showPopup, setShowPopup] = useState(false)
+
+return (
+<>
 
     <div className="min-h-screen  bg-white">
       {/* Hero Section */}
@@ -123,7 +128,7 @@ const PlusFeatures = () => {
 
         {/* Get Started Button */}
         <div className="flex justify-center mb-12">
-          <button className="bg-tinder-red bg-red-400  text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors">
+          <button onClick={() => setShowPopup(true)}  className="bg-tinder-red bg-red-400  text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors">
             Get Started
           </button>
         </div>
@@ -136,6 +141,12 @@ const PlusFeatures = () => {
 
 
     </div>
+
+
+    <LoginPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
+
+
+</>
 
 
 

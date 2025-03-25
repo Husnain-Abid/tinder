@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../asset/whiteLogo.png";
 import LoginPopup from "./Login";
+import ResponsiveNavbar from "./ResponsiveNavbar";
 
 export default function Navbar() {
   const [showNavbar, setShowNavbar] = useState(true);
@@ -10,6 +11,16 @@ export default function Navbar() {
   const [safetyDropdownOpen, setSafetyDropdownOpen] = useState(false); // For dropdown
 
   const [showPopup, setShowPopup] = useState(false)
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const openMenu = () => {
+    setIsMenuOpen(true)
+  }
+
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+  }
 
 
   useEffect(() => {
@@ -68,7 +79,7 @@ export default function Navbar() {
                     Tinder Platinum
                   </Link>
 
-                  <Link to="/premium" className="block font-bold text-white hover:text-red-600 hover:underline ">
+                  <Link to="/select" className="block font-bold text-white hover:text-red-600 hover:underline ">
                     Tinder SELECT
                   </Link>
 
@@ -87,7 +98,7 @@ export default function Navbar() {
               onMouseLeave={() => setSafetyDropdownOpen(false)}
             >
 
-              <Link to="/safety" className="text-lg text-white hover:text-red-600 hover:underline">
+              <Link to="/safety-tips" className="text-lg text-white hover:text-red-600 hover:underline">
                 Safety
               </Link>
 
@@ -134,7 +145,7 @@ export default function Navbar() {
         </div>
 
         {/* Right Section */}
-        <div className="flex items-center space-x-4 text-white ">
+        <div className="hidden md:flex items-center space-x-4 text-white ">
           <div className="flex items-center ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -157,8 +168,23 @@ export default function Navbar() {
           </button>
         </div>
 
-      </nav>
+        {/* Mobile Menu Button - Visible only on Mobile */}
+        <button className="md:hidden text-white" onClick={openMenu} aria-label="Open menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
 
+
+      </nav>
+      {/* Responsive Mobile Menu */}
+      <ResponsiveNavbar isOpen={isMenuOpen} onClose={closeMenu} />
 
       <LoginPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
 

@@ -5,12 +5,19 @@ import about1 from "../../asset/about1.png"
 import about2 from "../../asset/about2.png"
 import about3 from "../../asset/about3.png"
 import Footer1 from "../../components/common/Footer1"
+import LoginPopup from "../../components/common/Login"
+import { useState } from "react"
 
 
 
 
 const LearnPage = () => {
+    const [showPopup, setShowPopup] = useState(false)
+  
   return (
+
+    <>
+
     <div className="min-h-screen flex flex-col bg-white w-full">
       {/* Navigation Bar */}
 
@@ -33,7 +40,7 @@ const LearnPage = () => {
             glance.
           </p>
           <button className="bg-tinder-red text-white  px-8 py-3 rounded-full font-medium"
-                style={{ background: "var(--custom-gradient)"}}          
+                style={{ background: "var(--custom-gradient)"}}   onClick={() => setShowPopup(true)}       
           >Join Now</button>
         </div>
 
@@ -214,7 +221,7 @@ const LearnPage = () => {
           <button className="bg-tinder-red text-white  px-8 py-3 rounded-full font-medium"
           
           style={{ background: "var(--custom-gradient)"}}
-          
+          onClick={() => setShowPopup(true)}
           >Get Started</button>
         </div>
       </div>
@@ -223,8 +230,15 @@ const LearnPage = () => {
       <Footer1 />
 
 
-
     </div>
+    
+      <LoginPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
+
+
+    
+    </>
+
+
   )
 }
 

@@ -19,3 +19,15 @@
   --color--brand-gradient-end: #f97316;   /* Orange */
   --custom-gradient: linear-gradient(to top right, var(--color--brand-gradient-start), var(--color--brand-gradient-end));
 }
+
+
+
+/* Hide the scrollbar but allow scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
