@@ -40,7 +40,7 @@ export default function Product() {
                 dating experience — all you need are some good pics and a solid bio to stand out.
               </p>
               <div className='text-center'>
-                <button className="bg-tinder-red text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors">
+                <button onClick={() => setShowPopup(true)} className="bg-red-400 text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors">
                   Join Now
                 </button>
 

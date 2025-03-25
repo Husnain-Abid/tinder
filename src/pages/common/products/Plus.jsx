@@ -32,7 +32,7 @@ export default function Plus() {
               their photos. Send Likes to increase your match-making potential or just send Likes because it feels good.
               With an upgrade to a Tinder Plus subscription, you'll never run out of Likes again.
             </p>
-            <button className="bg-tinder-red bg-red-500 text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors">
+            <button onClick={() => setShowPopup(true)}  className="bg-tinder-red bg-red-500 text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors">
               Join Now
             </button>
           </div>

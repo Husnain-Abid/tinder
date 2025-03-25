@@ -39,7 +39,7 @@ export default function Gold() {
             <p className="text-left text-gray-600 mb-8">
             Increase your match-making potential and enjoy most of Tinder’s premium features with Tinder Platinum™! Dating online just got easier. See someone you’d love to meet and can’t wait to match? As a Platinum subscriber, you can attach a note to every Super Like you send, increasing your match-making potential by up to 25%. And when you do—feel free to stand out in a major way by complimenting their photos or giving them your best opener. By making the first move, you can speed up the process and start to chat with people sooner.
             </p>
-            <button className="bg-tinder-red bg-red-500 text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors" onClick={() => setShowPopup(true)} >
+            <button  className="bg-tinder-red bg-red-500 text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors" onClick={() => setShowPopup(true)} >
               Join Now
             </button>
           </div>

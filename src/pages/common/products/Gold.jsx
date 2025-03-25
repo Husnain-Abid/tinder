@@ -36,7 +36,7 @@ return (
             <p className="text-left text-gray-600 mb-8">
               It doesn’t matter if you’re looking for love, a date, or something casual. When there are only so many hours in a day for dating, a little intel goes a long way. Tinder Gold™ saves time by letting you see who Likes you. Match, pass, and expand photos to view full profiles with a simple tap and get more efficient with your time online. With all your admirers in one place, it’s the best way to get a free confidence boost while you meet new people.
             </p>
-            <button className="bg-tinder-red bg-red-500 text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors">
+            <button onClick={() => setShowPopup(true)}  className="bg-tinder-red bg-red-500 text-white px-8 py-3 rounded-full font-medium hover:bg-tinder-red/90 transition-colors">
               Join Now
             </button>
           </div>
