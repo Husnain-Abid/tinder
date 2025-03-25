@@ -32,7 +32,7 @@ const HomeAfterLogin = () => {
     return (
         <div className="flex min-h-screen bg-gray-100">
             {/* Left Sidebar */}
-            <div className="w-full max-w-sm  bg-white shadow-md">
+            <div className="hidden md:block w-full max-w-sm  bg-white shadow-md">
                 {/* Top Navigation */}
                 <div className="bg-gradient-to-r from-pink-500 to-red-500 p-3 flex items-center space-x-4">
                     {/* User Profile */}
@@ -623,7 +623,7 @@ const HomeAfterLogin = () => {
 
 
                 {/* Action Buttons */}
-                <div className="absolute bottom-12 left-1/2 z-30 transform -translate-x-1/2 flex items-center space-x-4">
+                <div className="absolute  bottom-4 md:bottom-12 left-1/2 z-30 transform -translate-x-1/2 flex items-center space-x-2 md:space-x-4">
                     {/* Rewind Button */}
                     <button className="bg-white p-4 rounded-full shadow-lg">
                         <svg
