@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import hero from '../../asset/hero.png';
+import LoginPopup from '../common/Login';
 
 export default function Hero() {
     const [opacity, setOpacity] = useState(1); // State to manage opacity
+
+  const [showPopup, setShowPopup] = useState(false)
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -21,6 +25,8 @@ export default function Hero() {
     }, []);
 
     return (
+<>
+
         <div className="relative h-screen w-full">
             {/* Background Image */}
             <div
@@ -47,10 +53,19 @@ export default function Hero() {
                 <button 
                     className='rounded-full px-6 py-3 text-white transition-opacity duration-500' 
                     style={{ background: "var(--custom-gradient)", opacity }}
+                    onClick={() => setShowPopup(true)}  
                 >
                     Create account
                 </button>
             </div>
         </div>
-    );
+
+        <LoginPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
+
+
+</>
+
+    
+
+);
 }
