@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import image1 from "../../asset/image1.jpeg"
 import image3 from "../../asset/image2.jpg"
 import avatar from "../../asset/image3.jpg"
+import redlogo from "../../asset/logo.png"
 
 
 
@@ -22,128 +23,614 @@ export default function MobileHome() {
         {activeTab === "home" && (
           <div className="p-4">
             {/* Tinder Logo */}
-            <div className="mb-4">
-              <svg viewBox="0 0 519 123" className="h-8 w-auto text-tinder-red fill-current">
+            <div className="mb-4 flex justify-between items-center">
+              {/* <svg viewBox="0 0 519 123" className="h-8 w-auto text-tinder-red fill-current">
                 <path
                   d="M31.5 49.6C55 41.5 59 20.4 56 1c0-.7.6-1.2 1.2-1C79.7 11 105 35 105 71c0 27.6-21.4 52-52.5 52a50 50 0 0 1-28.2-92.7c.6-.4 1.4 0 1.4.7.3 3.7 1.3 13 5.4 18.6h.4z"
                   fill="currentColor"
                 ></path>
-              </svg>
+              </svg> */}
+
+              <img src={redlogo} alt="logo" className='w-24' />
+
+              <div className='p-2 bg-white rounded-full'>
+                <svg xmlns="http://www.w3.org/2000/svg" className='text-pink-500' width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap-icon lucide-zap"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg>
+
+              </div>
+
+
             </div>
 
-            {/* Goal-driven Dating Section */}
-            <div className="mb-4">
-              <h2 className="text-xl font-bold text-gray-900">Goal-driven dating</h2>
-              <p className="text-gray-600 text-sm">Find people with similar relationship goals</p>
-            </div>
+            {/* Main Content - Profile Card */}
+            <div className=" relative flex-grow flex items-center justify-center z-0 bg-gray-100 p-4">
+              <div className="relative w-full max-w-md h-[70vh] z-0 rounded-xl overflow-hidden shadow-lg">
+                {/* Profile Image */}
+                <img src={image1} alt="Profile" className="w-full h-full object-cover" />
 
-            {/* Relationship Goals Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {/* Long-term partner */}
-              <div className="bg-purple-400 rounded-xl p-4 h-40 flex flex-col justify-end relative overflow-hidden">
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="flex justify-center">
-                    <div className="relative">
-                      <div className="w-16 h-16 bg-red-700 rounded-full transform -rotate-12"></div>
-                      <div className="w-16 h-16 bg-red-700 rounded-full transform rotate-12 absolute top-0 left-0"></div>
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <div className="w-8 h-8 bg-pink-300 rounded-full"></div>
-                      </div>
-                    </div>
+                {/* Profile Info Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 pb-10 bg-gradient-to-t from-black/80 to-transparent">
+                  {/* Recently Active */}
+                  <div className="flex items-center mb-2">
+                    <div className="h-2 w-2 rounded-full bg-green-500 mr-2"></div>
+                    <span className="text-white text-sm">Recently Active</span>
                   </div>
-                </div>
-                <h3 className="text-white font-bold z-10">Long-term partner</h3>
-              </div>
 
-              {/* Free Tonight */}
-              <div className="bg-purple-400 rounded-xl p-4 h-40 flex flex-col justify-end relative overflow-hidden">
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-20 h-20 bg-white rounded-full transform -translate-x-2"></div>
-                  <div className="absolute top-0 right-0">
-                    <div className="w-6 h-6 bg-yellow-200 transform rotate-45"></div>
-                  </div>
-                </div>
-                <h3 className="text-white font-bold z-10">Free Tonight</h3>
-              </div>
-
-              {/* Short-term fun */}
-              <div className="bg-purple-400 rounded-xl p-4 h-40 flex flex-col justify-end relative overflow-hidden">
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="flex space-x-2">
-                    <div className="w-12 h-12 bg-orange-400 rounded-full flex items-center justify-center">
-                      <div className="w-16 h-2 bg-yellow-300 absolute transform rotate-45"></div>
-                      <div className="w-16 h-2 bg-yellow-300 absolute transform -rotate-45"></div>
-                      <div className="w-16 h-2 bg-yellow-300 absolute transform rotate-90"></div>
-                      <div className="w-16 h-2 bg-yellow-300 absolute"></div>
-                    </div>
-                    <div className="w-12 h-12 bg-orange-400 rounded-full flex items-center justify-center">
-                      <div className="w-16 h-2 bg-yellow-300 absolute transform rotate-45"></div>
-                      <div className="w-16 h-2 bg-yellow-300 absolute transform -rotate-45"></div>
-                      <div className="w-16 h-2 bg-yellow-300 absolute transform rotate-90"></div>
-                      <div className="w-16 h-2 bg-yellow-300 absolute"></div>
-                    </div>
-                  </div>
-                </div>
-                <h3 className="text-white font-bold z-10">Short-term fun</h3>
-              </div>
-
-              {/* New friends */}
-              <div className="bg-red-400 rounded-xl p-4 h-40 flex flex-col justify-end relative overflow-hidden">
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="flex items-center justify-center">
-                    <div className="w-24 h-24 rounded-full border-4 border-white border-dashed flex items-center justify-center">
-                      <div className="w-6 h-6 bg-teal-500 absolute transform -translate-y-12 rotate-45"></div>
-                      <div className="w-4 h-4 bg-purple-400 absolute transform translate-x-10 translate-y-4 rounded-full"></div>
-                      <div className="w-4 h-4 bg-white absolute transform translate-x-8 -translate-y-4 rounded-full"></div>
-                      <div className="w-4 h-4 bg-teal-500 absolute transform -translate-x-10 translate-y-4 rounded-full"></div>
-                      <div className="w-4 h-4 bg-white absolute transform -translate-x-8 -translate-y-4 rounded-full"></div>
-                    </div>
-                  </div>
-                </div>
-                <h3 className="text-white font-bold z-10">New friends</h3>
-              </div>
-            </div>
-
-            {/* Discover Section */}
-            <div className="mt-8">
-              <h2 className="text-xl font-bold text-gray-900 mb-4">Discover</h2>
-              <div className="bg-white rounded-xl shadow-md overflow-hidden">
-                <img src={image1} alt="Profile" className="w-full h-96 object-cover" />
-                <div className="p-4 bg-white">
+                  {/* Name and Age */}
                   <div className="flex items-center">
-                    <h3 className="text-xl font-bold">Jessica, 25</h3>
-                    <div className="ml-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">New</div>
+                    <h2 className="text-3xl font-bold text-white mr-2">Ramsey</h2>
+                    <span className="text-2xl text-white">20</span>
+
+                    {/* Info Button */}
+                    <button className="ml-auto bg-black/30 p-1 rounded-full">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="text-white" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-up"><circle cx="12" cy="12" r="10" /><path d="m16 12-4-4-4 4" /><path d="M12 16V8" /></svg>
+                    </button>
+
                   </div>
-                  <p className="text-gray-600 text-sm mt-1">2 miles away</p>
+
+                  {/* Location */}
+                  <div className="flex items-center mt-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                    <span className="text-white ml-1">3 miles away</span>
+                  </div>
                 </div>
+
+
+
+
+                {/* status bar */}
+                <div className="absolute top-4 left-1/2 z-30 transform -translate-x-1/2 flex items-center space-x-4">
+
+                  {/* status dash */}
+                  <div className="bg-white px-9 py-0.5  shadow-lg">
+
+                  </div>
+                  {/* status dash */}
+                  <div className="bg-white px-9 py-0.5  shadow-lg">
+
+                  </div>
+                  {/* status dash */}
+                  <div className="bg-gray-50 px-9 py-0.5  shadow-lg">
+
+                  </div>
+                  {/* status dash */}
+                  <div className="bg-gray-50 px-9 py-0.5  shadow-lg">
+
+                  </div>
+                  {/* status dash */}
+                  <div className="bg-gray-50 px-9 py-0.5  shadow-lg">
+
+                  </div>
+
+
+                </div>
+
+
+
               </div>
+
+
+
+              {/* Action Buttons */}
+              <div className="absolute  -bottom-4  left-1/2 z-30 transform -translate-x-1/2 flex items-center space-x-2 md:space-x-4">
+                {/* Rewind Button */}
+                <button className="bg-white p-4 rounded-full shadow-lg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 text-yellow-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0019 16V8a1 1 0 00-1.6-.8l-5.333 4zM4.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0011 16V8a1 1 0 00-1.6-.8l-5.334 4z"
+                    />
+                  </svg>
+                </button>
+
+                {/* Dislike Button */}
+                <button className="bg-white p-5 rounded-full shadow-lg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 text-pink-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+
+                {/* Super Like Button */}
+                <button className="bg-white p-4 rounded-full shadow-lg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 text-blue-500"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                </button>
+
+                {/* Like Button */}
+                <button className="bg-white p-4 rounded-full shadow-lg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-green-500"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+
+                {/* Boost Button */}
+                <button className="bg-white p-4 rounded-full shadow-lg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 text-purple-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </button>
+              </div>
+
+
+
             </div>
+
+
+
           </div>
         )}
 
         {/* Habit Tab Content */}
         {activeTab === "habit" && (
+          <>
+          
+          {/* Goal-driven Dating Section */}
           <div className="p-4">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Explore</h2>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-pink-100 rounded-xl p-4 h-40 flex flex-col justify-end">
-                <h3 className="text-pink-600 font-bold">Top Picks</h3>
-                <p className="text-gray-600 text-sm">Premium members only</p>
+          <h2 className="text-xl font-bold text-gray-800 mb-1">Goal-driven dating</h2>
+          <p className="text-gray-600 mb-4">Find people with similar relationship goals</p>
+
+          {/* Relationship Goals Grid */}
+          <div className="grid grid-cols-2 gap-4 overflow-y-auto no-scrollbar max-h-[85vh] ">
+              {/* Long-term partner */}
+              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Rose Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-red-600"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path
+                                  fillRule="evenodd"
+                                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                  clipRule="evenodd"
+                              />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">Long-term partner</h3>
               </div>
-              <div className="bg-purple-100 rounded-xl p-4 h-40 flex flex-col justify-end">
-                <h3 className="text-purple-600 font-bold">Liked You</h3>
-                <p className="text-gray-600 text-sm">See who likes you</p>
+
+              {/* Free Tonight */}
+              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Moon Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-white"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">Free Tonight</h3>
               </div>
-              <div className="bg-blue-100 rounded-xl p-4 h-40 flex flex-col justify-end">
-                <h3 className="text-blue-600 font-bold">Explore Interests</h3>
-                <p className="text-gray-600 text-sm">Find your match</p>
+
+              {/* Short-term fun */}
+              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Sparkle Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-yellow-400"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">Short-term fun</h3>
               </div>
-              <div className="bg-green-100 rounded-xl p-4 h-40 flex flex-col justify-end">
-                <h3 className="text-green-600 font-bold">Events</h3>
-                <p className="text-gray-600 text-sm">Meet in person</p>
+
+              {/* New friends */}
+              <div className="bg-red-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Circles Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-blue-400"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path
+                                  fillRule="evenodd"
+                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                                  clipRule="evenodd"
+                              />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">New friends</h3>
               </div>
-            </div>
+
+              {/* Long-term partner */}
+              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Rose Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-red-600"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path
+                                  fillRule="evenodd"
+                                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                  clipRule="evenodd"
+                              />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">Long-term partner</h3>
+              </div>
+
+              {/* Free Tonight */}
+              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Moon Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-white"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">Free Tonight</h3>
+              </div>
+
+              {/* Short-term fun */}
+              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Sparkle Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-yellow-400"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">Short-term fun</h3>
+              </div>
+
+              {/* New friends */}
+              <div className="bg-red-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Circles Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-blue-400"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path
+                                  fillRule="evenodd"
+                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                                  clipRule="evenodd"
+                              />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">New friends</h3>
+              </div>
+
+              {/* Long-term partner */}
+              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Rose Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-red-600"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path
+                                  fillRule="evenodd"
+                                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                  clipRule="evenodd"
+                              />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">Long-term partner</h3>
+              </div>
+
+              {/* Free Tonight */}
+              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Moon Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-white"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">Free Tonight</h3>
+              </div>
+
+              {/* Short-term fun */}
+              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Sparkle Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-yellow-400"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">Short-term fun</h3>
+              </div>
+
+              {/* New friends */}
+              <div className="bg-red-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Circles Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-blue-400"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path
+                                  fillRule="evenodd"
+                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                                  clipRule="evenodd"
+                              />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">New friends</h3>
+              </div>
+
+              {/* Long-term partner */}
+              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Rose Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-red-600"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path
+                                  fillRule="evenodd"
+                                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                  clipRule="evenodd"
+                              />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">Long-term partner</h3>
+              </div>
+
+              {/* Free Tonight */}
+              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Moon Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-white"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">Free Tonight</h3>
+              </div>
+
+              {/* Short-term fun */}
+              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Sparkle Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-yellow-400"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">Short-term fun</h3>
+              </div>
+
+              {/* New friends */}
+              <div className="bg-red-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Circles Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-blue-400"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path
+                                  fillRule="evenodd"
+                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                                  clipRule="evenodd"
+                              />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">New friends</h3>
+              </div>
+
+              {/* Long-term partner */}
+              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Rose Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-red-600"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path
+                                  fillRule="evenodd"
+                                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                  clipRule="evenodd"
+                              />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">Long-term partner</h3>
+              </div>
+
+              {/* Free Tonight */}
+              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Moon Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-white"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">Free Tonight</h3>
+              </div>
+
+              {/* Short-term fun */}
+              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Sparkle Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-yellow-400"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">Short-term fun</h3>
+              </div>
+
+              {/* New friends */}
+              <div className="bg-red-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                  <div className="mb-auto">
+                      {/* Circles Icon */}
+                      <div className="flex justify-center">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-32 text-blue-400"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                          >
+                              <path
+                                  fillRule="evenodd"
+                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                                  clipRule="evenodd"
+                              />
+                          </svg>
+                      </div>
+                  </div>
+                  <h3 className="text-white font-bold">New friends</h3>
+              </div>
+
           </div>
+
+      </div>
+
+          </>
+        
+        
         )}
 
         {/* Upgrade Tab Content */}
@@ -460,9 +947,8 @@ export default function MobileHome() {
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around items-center h-16 px-2">
         <button
           onClick={() => handleTabChange("home")}
-          className={`flex flex-col items-center justify-center w-1/5 h-full ${
-            activeTab === "home" ? "text-tinder-red" : "text-gray-500"
-          }`}
+          className={`flex flex-col items-center justify-center w-1/5 h-full ${activeTab === "home" ? "text-tinder-red" : "text-gray-500"
+            }`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -488,9 +974,8 @@ export default function MobileHome() {
 
         <button
           onClick={() => handleTabChange("habit")}
-          className={`flex flex-col items-center justify-center w-1/5 h-full ${
-            activeTab === "habit" ? "text-tinder-red" : "text-gray-500"
-          }`}
+          className={`flex flex-col items-center justify-center w-1/5 h-full ${activeTab === "habit" ? "text-tinder-red" : "text-gray-500"
+            }`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -511,9 +996,8 @@ export default function MobileHome() {
 
         <button
           onClick={() => handleTabChange("upgrade")}
-          className={`flex flex-col items-center justify-center w-1/5 h-full ${
-            activeTab === "upgrade" ? "text-tinder-red" : "text-gray-500"
-          }`}
+          className={`flex flex-col items-center justify-center w-1/5 h-full ${activeTab === "upgrade" ? "text-tinder-red" : "text-gray-500"
+            }`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -534,9 +1018,8 @@ export default function MobileHome() {
 
         <button
           onClick={() => handleTabChange("messages")}
-          className={`flex flex-col items-center justify-center w-1/5 h-full ${
-            activeTab === "messages" ? "text-tinder-red" : "text-gray-500"
-          }`}
+          className={`flex flex-col items-center justify-center w-1/5 h-full ${activeTab === "messages" ? "text-tinder-red" : "text-gray-500"
+            }`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -557,9 +1040,8 @@ export default function MobileHome() {
 
         <button
           onClick={() => handleTabChange("profile")}
-          className={`flex flex-col items-center justify-center w-1/5 h-full ${
-            activeTab === "profile" ? "text-tinder-red" : "text-gray-500"
-          }`}
+          className={`flex flex-col items-center justify-center w-1/5 h-full ${activeTab === "profile" ? "text-tinder-red" : "text-gray-500"
+            }`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
