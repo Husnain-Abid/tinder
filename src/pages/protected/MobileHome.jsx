@@ -216,421 +216,473 @@ export default function MobileHome() {
         {/* Habit Tab Content */}
         {activeTab === "habit" && (
           <>
-          
-          {/* Goal-driven Dating Section */}
-          <div className="p-4">
-          <h2 className="text-xl font-bold text-gray-800 mb-1">Goal-driven dating</h2>
-          <p className="text-gray-600 mb-4">Find people with similar relationship goals</p>
 
-          {/* Relationship Goals Grid */}
-          <div className="grid grid-cols-2 gap-4 overflow-y-auto no-scrollbar max-h-[85vh] ">
-              {/* Long-term partner */}
-              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+            {/* Goal-driven Dating Section */}
+            <div className="p-4">
+              <h2 className="text-xl font-bold text-gray-800 mb-1">Goal-driven dating</h2>
+              <p className="text-gray-600 mb-4">Find people with similar relationship goals</p>
+
+              {/* Relationship Goals Grid */}
+              <div className="grid grid-cols-2 gap-4 overflow-y-auto no-scrollbar max-h-[85vh] ">
+                {/* Long-term partner */}
+                <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
+
+
+                >
                   <div className="mb-auto">
-                      {/* Rose Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-red-600"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path
-                                  fillRule="evenodd"
-                                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                  clipRule="evenodd"
-                              />
-                          </svg>
-                      </div>
+                    {/* Rose Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-red-600"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">Long-term partner</h3>
-              </div>
+                </div>
 
-              {/* Free Tonight */}
-              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                {/* Free Tonight */}
+                <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
+
+                >
                   <div className="mb-auto">
-                      {/* Moon Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-white"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                          </svg>
-                      </div>
+                    {/* Moon Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-white"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">Free Tonight</h3>
-              </div>
+                </div>
 
-              {/* Short-term fun */}
-              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                {/* Short-term fun */}
+                <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
+                >
                   <div className="mb-auto">
-                      {/* Sparkle Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-yellow-400"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" />
-                          </svg>
-                      </div>
+                    {/* Sparkle Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-yellow-400"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">Short-term fun</h3>
-              </div>
+                </div>
 
-              {/* New friends */}
-              <div className="bg-red-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                {/* New friends */}
+                <div className="bg-red-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
+                >
                   <div className="mb-auto">
-                      {/* Circles Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-blue-400"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path
-                                  fillRule="evenodd"
-                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
-                                  clipRule="evenodd"
-                              />
-                          </svg>
-                      </div>
+                    {/* Circles Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-blue-400"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">New friends</h3>
-              </div>
+                </div>
+                {/* Long-term partner */}
+                <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
 
-              {/* Long-term partner */}
-              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+
+                >
                   <div className="mb-auto">
-                      {/* Rose Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-red-600"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path
-                                  fillRule="evenodd"
-                                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                  clipRule="evenodd"
-                              />
-                          </svg>
-                      </div>
+                    {/* Rose Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-red-600"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">Long-term partner</h3>
-              </div>
+                </div>
 
-              {/* Free Tonight */}
-              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                {/* Free Tonight */}
+                <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
+
+                >
                   <div className="mb-auto">
-                      {/* Moon Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-white"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                          </svg>
-                      </div>
+                    {/* Moon Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-white"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">Free Tonight</h3>
-              </div>
+                </div>
 
-              {/* Short-term fun */}
-              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                {/* Short-term fun */}
+                <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
+                >
                   <div className="mb-auto">
-                      {/* Sparkle Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-yellow-400"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" />
-                          </svg>
-                      </div>
+                    {/* Sparkle Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-yellow-400"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">Short-term fun</h3>
-              </div>
+                </div>
 
-              {/* New friends */}
-              <div className="bg-red-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                {/* New friends */}
+                <div className="bg-red-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
+                >
                   <div className="mb-auto">
-                      {/* Circles Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-blue-400"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path
-                                  fillRule="evenodd"
-                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
-                                  clipRule="evenodd"
-                              />
-                          </svg>
-                      </div>
+                    {/* Circles Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-blue-400"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">New friends</h3>
-              </div>
+                </div>
+                {/* Long-term partner */}
+                <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
 
-              {/* Long-term partner */}
-              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+
+                >
                   <div className="mb-auto">
-                      {/* Rose Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-red-600"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path
-                                  fillRule="evenodd"
-                                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                  clipRule="evenodd"
-                              />
-                          </svg>
-                      </div>
+                    {/* Rose Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-red-600"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">Long-term partner</h3>
-              </div>
+                </div>
 
-              {/* Free Tonight */}
-              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                {/* Free Tonight */}
+                <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
+
+                >
                   <div className="mb-auto">
-                      {/* Moon Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-white"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                          </svg>
-                      </div>
+                    {/* Moon Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-white"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">Free Tonight</h3>
-              </div>
+                </div>
 
-              {/* Short-term fun */}
-              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                {/* Short-term fun */}
+                <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
+                >
                   <div className="mb-auto">
-                      {/* Sparkle Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-yellow-400"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" />
-                          </svg>
-                      </div>
+                    {/* Sparkle Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-yellow-400"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">Short-term fun</h3>
-              </div>
+                </div>
 
-              {/* New friends */}
-              <div className="bg-red-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                {/* New friends */}
+                <div className="bg-red-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
+                >
                   <div className="mb-auto">
-                      {/* Circles Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-blue-400"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path
-                                  fillRule="evenodd"
-                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
-                                  clipRule="evenodd"
-                              />
-                          </svg>
-                      </div>
+                    {/* Circles Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-blue-400"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">New friends</h3>
-              </div>
+                </div>
+                {/* Long-term partner */}
+                <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
 
-              {/* Long-term partner */}
-              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+
+                >
                   <div className="mb-auto">
-                      {/* Rose Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-red-600"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path
-                                  fillRule="evenodd"
-                                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                  clipRule="evenodd"
-                              />
-                          </svg>
-                      </div>
+                    {/* Rose Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-red-600"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">Long-term partner</h3>
-              </div>
+                </div>
 
-              {/* Free Tonight */}
-              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                {/* Free Tonight */}
+                <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
+
+                >
                   <div className="mb-auto">
-                      {/* Moon Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-white"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                          </svg>
-                      </div>
+                    {/* Moon Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-white"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">Free Tonight</h3>
-              </div>
+                </div>
 
-              {/* Short-term fun */}
-              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                {/* Short-term fun */}
+                <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
+                >
                   <div className="mb-auto">
-                      {/* Sparkle Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-yellow-400"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" />
-                          </svg>
-                      </div>
+                    {/* Sparkle Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-yellow-400"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">Short-term fun</h3>
-              </div>
+                </div>
 
-              {/* New friends */}
-              <div className="bg-red-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                {/* New friends */}
+                <div className="bg-red-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
+                >
                   <div className="mb-auto">
-                      {/* Circles Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-blue-400"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path
-                                  fillRule="evenodd"
-                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
-                                  clipRule="evenodd"
-                              />
-                          </svg>
-                      </div>
+                    {/* Circles Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-blue-400"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">New friends</h3>
-              </div>
+                </div>
+                {/* Long-term partner */}
+                <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
 
-              {/* Long-term partner */}
-              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+
+                >
                   <div className="mb-auto">
-                      {/* Rose Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-red-600"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path
-                                  fillRule="evenodd"
-                                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                  clipRule="evenodd"
-                              />
-                          </svg>
-                      </div>
+                    {/* Rose Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-red-600"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">Long-term partner</h3>
-              </div>
+                </div>
 
-              {/* Free Tonight */}
-              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                {/* Free Tonight */}
+                <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
+
+                >
                   <div className="mb-auto">
-                      {/* Moon Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-white"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                          </svg>
-                      </div>
+                    {/* Moon Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-white"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">Free Tonight</h3>
-              </div>
+                </div>
 
-              {/* Short-term fun */}
-              <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                {/* Short-term fun */}
+                <div className="bg-purple-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
+                >
                   <div className="mb-auto">
-                      {/* Sparkle Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-yellow-400"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" />
-                          </svg>
-                      </div>
+                    {/* Sparkle Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-yellow-400"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">Short-term fun</h3>
-              </div>
+                </div>
 
-              {/* New friends */}
-              <div className="bg-red-400 rounded-xl p-4 h-56 flex flex-col justify-end">
+                {/* New friends */}
+                <div className="bg-red-400 rounded-xl p-4 h-56 flex flex-col justify-end"
+                  onClick={() => setActiveTab("home")} // Update this line
+                >
                   <div className="mb-auto">
-                      {/* Circles Icon */}
-                      <div className="flex justify-center">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-32 text-blue-400"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                          >
-                              <path
-                                  fillRule="evenodd"
-                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
-                                  clipRule="evenodd"
-                              />
-                          </svg>
-                      </div>
+                    {/* Circles Icon */}
+                    <div className="flex justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-32 text-blue-400"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold">New friends</h3>
+                </div>
+ 
+
               </div>
 
-          </div>
-
-      </div>
+            </div>
 
           </>
-        
-        
+
+
         )}
 
         {/* Upgrade Tab Content */}
@@ -999,7 +1051,7 @@ export default function MobileHome() {
           className={`flex flex-col items-center justify-center w-1/5 h-full ${activeTab === "upgrade" ? "text-tinder-red" : "text-gray-500"
             }`}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkle-icon lucide-sparkle"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkle-icon lucide-sparkle"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" /></svg>
           {/* <span className="text-xs mt-1">Upgrade</span> */}
         </button>
 
