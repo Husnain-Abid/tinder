@@ -18,6 +18,9 @@ import Security from './pages/common/safety/Security.jsx'
 import LoginPopup from './components/common/Login.jsx'
 import HomeAfterLogin from './pages/protected/Home.jsx'
 import Select from './pages/common/products/Select.jsx'
+import EditProfile from './pages/protected/EditProfile.jsx'
+import SettingsPage from './pages/protected/SettingsPage.jsx'
+import AddMedia from './pages/protected/AddMedia.jsx'
 
 function App() {
 
@@ -59,7 +62,9 @@ function App() {
 
         {/* protected pages  */}
         <Route path='/home' element={<HomeAfterLogin />}></Route>
-        {/* <Route path='/download' element={<Download />}></Route> */}
+        <Route path='/edit-profile' element={<EditProfile />}></Route>
+        <Route path='/setting' element={<SettingsPage />}></Route>
+        <Route path='/add-media' element={<AddMedia />}></Route>
         
 
 

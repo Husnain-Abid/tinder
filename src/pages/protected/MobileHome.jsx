@@ -3,12 +3,16 @@ import image1 from "../../asset/image1.jpeg"
 import image3 from "../../asset/image2.jpg"
 import avatar from "../../asset/image3.jpg"
 import redlogo from "../../asset/logo.png"
+import image2 from "../../asset/avatar.jpg"
+import { useNavigate } from 'react-router-dom'
 
 
 
 export default function MobileHome() {
 
-  const [activeTab, setActiveTab] = useState("home")
+const navigate = useNavigate();
+
+  const [activeTab, setActiveTab] = useState("home");
 
   const handleTabChange = (tab) => {
     setActiveTab(tab)
@@ -674,7 +678,7 @@ export default function MobileHome() {
                   </div>
                   <h3 className="text-white font-bold">New friends</h3>
                 </div>
- 
+
 
               </div>
 
@@ -822,176 +826,181 @@ export default function MobileHome() {
 
         {/* Profile Tab Content */}
         {activeTab === "profile" && (
-          <div className="p-4">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-gray-900">My Profile</h2>
-              <button className="text-pink-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                  />
-                </svg>
-              </button>
+
+          <div className="flex flex-col  bg-white">
+            {/* Main Content Area */}
+            <div className="flex-grow overflow-y-auto ">
+              <div className="flex flex-col items-center pt-20 pb-16">
+                {/* Profile Image with Completion Ring */}
+                <div className="relative mb-2">
+                  <div className="w-28 h-28 rounded-full border-4 border-white shadow-md overflow-hidden">
+                    <img src={image2} alt="Profile" className="w-full h-full object-cover" />
+                  </div>
+                  {/* Completion Ring */}
+                  <svg className="absolute -top-2 -left-2 w-32 h-32" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="#f0f0f0" strokeWidth="4" />
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="46"
+                      fill="none"
+                      stroke="#ff4d67"
+                      strokeWidth="4"
+                      strokeDasharray="289"
+                      strokeDashoffset="248" // 289 - (289 * 0.14) to show 14% completion
+                      strokeLinecap="round"
+                      transform="rotate(-90 50 50)"
+                    />
+                  </svg>
+                  {/* Completion Percentage */}
+                  <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-pink-500 to-red-500 text-white text-xs font-bold py-1 px-3 text-center w-32 rounded-full shadow-md">
+                    14% complete
+                  </div>
+                </div>
+
+                {/* Name and Verification */}
+                <div className="flex items-center mt-6 ">
+                  <h1 className="text-3xl font-normal text-gray-800">Alicia, 27</h1>
+                  <svg className="w-6 h-6 ml-2 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                  </svg>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex justify-between w-full max-w-xs px-4 mt-4">
+                  {/* Settings Button */}
+                  <div className=" relative top-0 flex flex-col items-center" onClick={()=>navigate("/setting")} >
+                    <button className="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center mb-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6 text-gray-600"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                    </button>
+                    <span className="text-xs text-gray-700">Settings</span>
+                  </div>
+
+                  {/* Edit Profile Button */}
+                  <div className="relative top-6 flex flex-col items-center" onClick={()=>navigate("/edit-profile")}>
+                    <button className="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center mb-2 relative">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6 text-gray-600"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                        />
+                      </svg>
+                      <div className="absolute top-0.5 right-0.5 w-2 h-2 bg-red-500 rounded-full"></div>
+                    </button>
+                    <span className="text-xs text-gray-700">Edit Profile</span>
+                  </div>
+
+                  {/* Add Media Button */}
+                  <div className="relative top-0 flex flex-col items-center" onClick={()=>navigate("/add-media")}>
+                    <button className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-red-500 flex items-center justify-center mb-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                    </button>
+                    <span className="text-xs text-gray-700">Add Media</span>
+                  </div>
+
+                </div>
+              </div>
+
+              {/* Curved Divider */}
+              <div className="relative h-12 bg-gray-100 shadow-2xl shadow-gray-100">
+                <div className="absolute top-0 left-0 right-0 h-12 bg-white rounded-b-[50%] shadow-2xl shadow-gray-100"></div>
+              </div>
+
+              {/* Tinder Platinum Section */}
+              <div className="bg-gray-100 px-6 py-8 flex flex-col items-center">
+                <div className="flex items-center mb-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={activeTab === "home" ? 2.5 : 1.5}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
+                    />
+                  </svg>
+                  <span className="text-lg font-bold text-gray-800">Tinder Platinum™</span>
+                </div>
+                <p className="text-gray-600 text-sm mb-8 text-center">Level up every action you take on Tinder</p>
+
+                {/* Pagination Dots */}
+                <div className="flex space-x-2 mb-6">
+                  <div className="w-2 h-2 rounded-full bg-gray-800"></div>
+                  <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+                </div>
+
+                {/* Get Platinum Button */}
+                <button className="bg-white text-gray-800 font-bold py-3 px-8 rounded-full border border-gray-300 shadow-sm">
+                  Get Tinder Platinum™
+                </button>
+              </div>
             </div>
 
-            {/* Profile Card */}
-            <div className="bg-white rounded-xl shadow-md overflow-hidden mb-6">
-              <div className="relative">
-                <img
-                  src={image1}
-                  alt="Your Profile"
-                  className="w-full h-80 object-cover"
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                  <h3 className="text-2xl font-bold text-white">Alex, 28</h3>
-                </div>
-              </div>
-              <div className="p-4">
-                <div className="flex items-center text-gray-600 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 mr-2"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                  <span>Software Developer</span>
-                </div>
-                <div className="flex items-center text-gray-600 mb-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 mr-2"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  <span>New York, NY</span>
-                </div>
-                <p className="text-gray-700">
-                  Coffee enthusiast, dog lover, and avid hiker. Looking for someone to share adventures with!
-                </p>
-              </div>
-            </div>
 
-            {/* Settings Options */}
-            <div className="bg-white rounded-xl shadow-md overflow-hidden">
-              <div className="divide-y divide-gray-200">
-                <div className="p-4 flex items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-gray-500 mr-3"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  <span className="text-gray-800">Settings</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-gray-400 ml-auto"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-                <div className="p-4 flex items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-gray-500 mr-3"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                  <span className="text-gray-800">Activity</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-gray-400 ml-auto"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-                <div className="p-4 flex items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-gray-500 mr-3"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  <span className="text-gray-800">Help & Support</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-gray-400 ml-auto"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
+
+            {/* Bottom Tab Indicator */}
+
           </div>
+
+
         )}
       </div>
 
