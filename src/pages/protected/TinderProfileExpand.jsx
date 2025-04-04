@@ -1,6 +1,8 @@
 import { useState } from "react"
 import redlogo from "../../asset/logo.png"
 import image1 from "../../asset/image1.jpeg"
+import image3 from "../../asset/image2.jpg"
+import avatar from "../../asset/image3.jpg"
 
 
 const TinderProfileExpand = ({ showProfileInfo, setShowProfileInfo }) => {
@@ -15,45 +17,140 @@ const TinderProfileExpand = ({ showProfileInfo, setShowProfileInfo }) => {
         setShowReportModal(!showReportModal)
     }
 
+
+
+    // profile card start
+
+    // Sample profile data
+    const profile = {
+        name: "Huddha",
+        age: 32,
+        distance: "3 miles away",
+        isActive: true,
+        images: [
+            avatar,
+            image1,
+            image3,
+        ],
+    }
+
+    // State to track current image index
+    const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+    // Function to go to next image
+    const nextImage = (e) => {
+        e.stopPropagation()
+        if (currentImageIndex < profile.images.length - 1) {
+            setCurrentImageIndex(currentImageIndex + 1)
+        }
+    }
+
+    // Function to go to previous image
+    const prevImage = (e) => {
+        e.stopPropagation()
+        if (currentImageIndex > 0) {
+            setCurrentImageIndex(currentImageIndex - 1)
+        }
+    }
+
+    // Function to handle direct navigation to a specific image
+    const goToImage = (index) => {
+        if (index >= 0 && index < profile.images.length) {
+            setCurrentImageIndex(index)
+        }
+    }
+
+    // profile card end
+
+
+
     return (
         <div className="relative min-h-screen bg-gray-100">
 
 
             {/* Main Profile Card */}
-            <div className="relative h-screen overflow-y-auto bg-white pb-20">
+            <div className="relative h-screen overflow-y-auto bg-white  pb-20">
                 {/* Profile Image */}
-                <div className="relative">
-                    <img src={image1} alt="Profile" className="w-full h-auto object-cover" />
+                <div className="relative px-4  mt-2">
 
 
 
-                    {/* Status Indicator */}
-                    {/* status bar */}
-                    <div className="absolute top-4 left-1/2 overflow-hidden  z-30  transform -translate-x-1/2 flex items-center space-x-4">
 
-                        {/* status dash */}
-                        <div className="bg-white px-9 py-0.5  shadow-lg">
 
-                        </div>
-                        {/* status dash */}
-                        <div className="bg-white px-9 py-0.5  shadow-lg">
 
-                        </div>
-                        {/* status dash */}
-                        <div className="bg-gray-50 px-9 py-0.5  shadow-lg">
 
-                        </div>
-                        {/* status dash */}
-                        <div className="bg-gray-50 px-9 py-0.5  shadow-lg">
 
-                        </div>
-                        {/* status dash */}
-                        <div className="bg-gray-50 px-9 py-0.5  shadow-lg">
 
-                        </div>
+
+
+                    {/* Progress Bar */}
+                    <div className="absolute top-0 left-0 right-0 z-20 flex justify-between px-2 py-2">
+                        {profile.images.map((_, index) => (
+                            <div
+                                key={index}
+                                className={`h-1 flex-1 mx-1 rounded-full ${index <= currentImageIndex ? "bg-white" : "bg-white/30"}`}
+                                onClick={() => goToImage(index)}
+                            />
+                        ))}
+                    </div>
+
+
+                    {/* Profile Image */}
+                    {/* <img src={image1} alt="Profile" className="w-full h-full object-cover" /> */}
+
+
+
+                    {/* Image */}
+                    <div className="relative w-full h-96 ">
+                        <img
+                            src={profile.images[currentImageIndex] || "/placeholder.svg"}
+                            alt={`${profile.name}'s profile`}
+                            className="w-full h-full object-cover rounded-md"
+                        />
+
+                        {/* Navigation Buttons */}
+                        <button
+                            className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black/30 p-2 rounded-full text-white"
+                            onClick={prevImage}
+                            disabled={currentImageIndex === 0}
+                            style={{ opacity: currentImageIndex === 0 ? 0.5 : 1 }}
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+
+                        <button
+                            className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black/30 p-2 rounded-full text-white"
+                            onClick={nextImage}
+                            disabled={currentImageIndex === profile.images.length - 1}
+                            style={{ opacity: currentImageIndex === profile.images.length - 1 ? 0.5 : 1 }}
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
 
 
                     </div>
+
+
+
+
+
+
 
 
                 </div>

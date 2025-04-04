@@ -194,7 +194,48 @@ export default function MobileHome() {
 
 
 
+  // profile card start
 
+  // Sample profile data
+  const profile = {
+    name: "Huddha",
+    age: 32,
+    distance: "3 miles away",
+    isActive: true,
+    images: [
+      avatar,
+      image1,
+      image3,
+    ],
+  }
+
+  // State to track current image index
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  // Function to go to next image
+  const nextImage = (e) => {
+    e.stopPropagation()
+    if (currentImageIndex < profile.images.length - 1) {
+      setCurrentImageIndex(currentImageIndex + 1)
+    }
+  }
+
+  // Function to go to previous image
+  const prevImage = (e) => {
+    e.stopPropagation()
+    if (currentImageIndex > 0) {
+      setCurrentImageIndex(currentImageIndex - 1)
+    }
+  }
+
+  // Function to handle direct navigation to a specific image
+  const goToImage = (index) => {
+    if (index >= 0 && index < profile.images.length) {
+      setCurrentImageIndex(index)
+    }
+  }
+
+  // profile card end
 
 
   return (
@@ -207,12 +248,6 @@ export default function MobileHome() {
           <div className="p-4">
             {/* Tinder Logo */}
             <div className="mb-4 flex justify-between items-center">
-              {/* <svg viewBox="0 0 519 123" className="h-8 w-auto text-tinder-red fill-current">
-                <path
-                  d="M31.5 49.6C55 41.5 59 20.4 56 1c0-.7.6-1.2 1.2-1C79.7 11 105 35 105 71c0 27.6-21.4 52-52.5 52a50 50 0 0 1-28.2-92.7c.6-.4 1.4 0 1.4.7.3 3.7 1.3 13 5.4 18.6h.4z"
-                  fill="currentColor"
-                ></path>
-              </svg> */}
 
               <img src={redlogo} alt="logo" className='w-24' />
 
@@ -221,14 +256,78 @@ export default function MobileHome() {
 
               </div>
 
-
             </div>
 
             {/* Main Content - Profile Card */}
             <div className=" relative flex-grow flex items-center justify-center z-0 bg-gray-100 p-4">
               <div className="relative w-full max-w-md h-[70vh] z-0 rounded-xl overflow-hidden shadow-lg">
+
+
+                {/* Progress Bar */}
+                <div className="absolute top-0 left-0 right-0 z-20 flex justify-between px-2 py-2">
+                  {profile.images.map((_, index) => (
+                    <div
+                      key={index}
+                      className={`h-1 flex-1 mx-1 rounded-full ${index <= currentImageIndex ? "bg-white" : "bg-white/30"}`}
+                      onClick={() => goToImage(index)}
+                    />
+                  ))}
+                </div>
+
+
                 {/* Profile Image */}
-                <img src={image1} alt="Profile" className="w-full h-full object-cover" />
+                {/* <img src={image1} alt="Profile" className="w-full h-full object-cover" /> */}
+
+
+
+                {/* Image */}
+                <div className="relative w-full h-full">
+                  <img
+                    src={profile.images[currentImageIndex] || "/placeholder.svg"}
+                    alt={`${profile.name}'s profile`}
+                    className="w-full h-full object-cover"
+                  />
+
+                  {/* Navigation Buttons */}
+                  <button
+                    className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black/30 p-2 rounded-full text-white"
+                    onClick={prevImage}
+                    disabled={currentImageIndex === 0}
+                    style={{ opacity: currentImageIndex === 0 ? 0.5 : 1 }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+
+                  <button
+                    className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black/30 p-2 rounded-full text-white"
+                    onClick={nextImage}
+                    disabled={currentImageIndex === profile.images.length - 1}
+                    style={{ opacity: currentImageIndex === profile.images.length - 1 ? 0.5 : 1 }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+
+
+                </div>
+
+
+
 
                 {/* Profile Info Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 pb-10 bg-gradient-to-t from-black/80 to-transparent">
@@ -274,38 +373,10 @@ export default function MobileHome() {
                     </svg>
                     <span className="text-white ml-1">3 miles away</span>
                   </div>
-                </div>
 
-
-
-
-                {/* status bar */}
-                <div className="absolute top-4 left-1/2 z-30 transform -translate-x-1/2 flex items-center space-x-4">
-
-                  {/* status dash */}
-                  <div className="bg-white px-9 py-0.5  shadow-lg">
-
-                  </div>
-                  {/* status dash */}
-                  <div className="bg-white px-9 py-0.5  shadow-lg">
-
-                  </div>
-                  {/* status dash */}
-                  <div className="bg-gray-50 px-9 py-0.5  shadow-lg">
-
-                  </div>
-                  {/* status dash */}
-                  <div className="bg-gray-50 px-9 py-0.5  shadow-lg">
-
-                  </div>
-                  {/* status dash */}
-                  <div className="bg-gray-50 px-9 py-0.5  shadow-lg">
-
-                  </div>
 
 
                 </div>
-
 
 
               </div>
