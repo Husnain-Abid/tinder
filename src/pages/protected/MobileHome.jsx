@@ -60,8 +60,8 @@ export default function MobileHome() {
     {
       name: "See Who Likes You",
       description: "See Who Likes You &",
-      bgColor: "bg-yellow-800",
-      color: "text-yellow-800",
+      bgColor: "bg-amber-500",
+      color: "text-amber-500",
       fillColor: "fill-yellow-800",
       icon: (
         <svg
@@ -159,7 +159,7 @@ export default function MobileHome() {
       icon: (
 
 
-        <svg xmlns="http://www.w3.org/2000/svg" className='fill-pink-500 text-pink-500' width="24" height="24" viewBox="0 0 24 24" fill="fill-pink-600" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap-icon lucide-zap"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" className='fill-pink-500 text-pink-500' width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap-icon lucide-zap"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg>
 
 
       ),
