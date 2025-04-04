@@ -3,7 +3,7 @@ import redlogo from "../../asset/logo.png"
 import image1 from "../../asset/image1.jpeg"
 
 
-const TinderProfileExpand = ( {showProfileInfo, setShowProfileInfo}) => {
+const TinderProfileExpand = ({ showProfileInfo, setShowProfileInfo }) => {
     const [showFullProfile, setShowFullProfile] = useState(true)
     const [showReportModal, setShowReportModal] = useState(false)
 
@@ -433,12 +433,15 @@ const TinderProfileExpand = ( {showProfileInfo, setShowProfileInfo}) => {
                     {/* Block and Report Buttons */}
                     <div className="mt-8 space-y-3">
                         <button
-                            className="w-full py-3 border border-gray-300 rounded-full text-gray-700 font-medium"
+                            className="w-full py-3 border border-gray-300 rounded-xl text-red-500 font-medium"
                             onClick={toggleReportModal}
                         >
                             Report Aleynna
                         </button>
-                        <button className="w-full py-3 border border-gray-300 rounded-full text-gray-700 font-medium">
+                        <button className="w-full py-3 border border-gray-300 rounded-xl text-gray-700 font-medium">
+                            Block Aleynna
+                        </button>
+                        <button className="w-full py-3 border border-gray-300 rounded-xl text-gray-700 font-medium">
                             Block Aleynna
                         </button>
                     </div>
@@ -447,52 +450,52 @@ const TinderProfileExpand = ( {showProfileInfo, setShowProfileInfo}) => {
 
 
 
-            {/* Action Buttons */}
-            <div className="fixed  bottom-4  left-1/2 z-30 transform -translate-x-1/2 flex items-center space-x-2 md:space-x-4 overflow-x-hidden">
-         
+                {/* Action Buttons */}
+                <div className="fixed  bottom-4  left-1/2 z-30 transform -translate-x-1/2 flex items-center space-x-2 md:space-x-4 overflow-x-hidden">
 
-                {/* Dislike Button */}
-                <button onClick={()=>setShowProfileInfo(false)} className="bg-white p-5 rounded-full shadow-lg">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 text-pink-500"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
 
-                {/* Super Like Button */}
-                <button className="bg-white p-4 rounded-full shadow-lg">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 text-blue-500"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                    >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                </button>
+                    {/* Dislike Button */}
+                    <button onClick={() => setShowProfileInfo(false)} className="bg-white p-5 rounded-full shadow-lg">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-4 w-4 text-pink-500"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
 
-                {/* Like Button */}
-                <button className="bg-white p-4 rounded-full shadow-lg">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-green-500"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                    >
-                        <path
-                            fillRule="evenodd"
-                            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                            clipRule="evenodd"
-                        />
-                    </svg>
-                </button>
+                    {/* Super Like Button */}
+                    <button className="bg-white p-4 rounded-full shadow-lg">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-4 w-4 text-blue-500"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                        >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </button>
 
-            </div>
+                    {/* Like Button */}
+                    <button className="bg-white p-4 rounded-full shadow-lg">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6 text-green-500"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                        >
+                            <path
+                                fillRule="evenodd"
+                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                clipRule="evenodd"
+                            />
+                        </svg>
+                    </button>
+
+                </div>
 
 
             </div>

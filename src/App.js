@@ -26,6 +26,15 @@ import GoldPackage from './pages/protected/packages/GoldPackage.jsx'
 import PlusPackage from './pages/protected/packages/PlusPackage.jsx'
 import TinderAllPlans from './pages/protected/packages/TinderAllPlans.jsx'
 import MyBoostPackage from './pages/protected/packages/MyBoostPackage.jsx'
+import TinderOrientation from './pages/signup/TinderOrientation.jsx'
+import TinderAddPhotos from './pages/signup/TinderAddPhotos.jsx'
+import TinderLifestyle from './pages/signup/TinderLifestyle.jsx'
+import TinderLookingFor from './pages/signup/TinderLookingFor.jsx'
+import TinderBirthday from './pages/signup/TinderBirthday.jsx'
+import TinderName from './pages/signup/TinderName.jsx'
+import TinderInterest from './pages/signup/TinderInterest.jsx'
+import TinderGender from './pages/signup/TinderGender.jsx'
+import TinderGenderInterest from './pages/signup/TinderGenderInterest.jsx'
 
 function App() {
 
@@ -62,9 +71,6 @@ function App() {
         <Route path='/security' element={<Security />}></Route>
 
 
-
-
-
         {/* protected pages  */}
         <Route path='/home' element={<HomeAfterLogin />}></Route>
         <Route path='/edit-profile' element={<EditProfile />}></Route>
@@ -80,6 +86,16 @@ function App() {
         <Route path='/package/boost' element={<MyBoostPackage />}></Route>
 
 
+        {/* signup  */}
+        <Route path='/user-name' element={<TinderName />}></Route>
+        <Route path='/birthday' element={<TinderBirthday />}></Route>
+        <Route path='/gender' element={<TinderGender />}></Route>
+        <Route path='/orientation' element={<TinderOrientation />}></Route>
+        <Route path='/gender-interest' element={<TinderGenderInterest />}></Route>
+        <Route path='/looking-for' element={<TinderLookingFor />}></Route>
+        <Route path='/lifestyle' element={<TinderLifestyle />}></Route>
+        <Route path='/interest' element={<TinderInterest />}></Route>
+        <Route path='/add-photos' element={<TinderAddPhotos />}></Route>
 
 
       </Routes>
