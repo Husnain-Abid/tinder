@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const SettingsPage = () => {
 
-const navigate = useNavigate();
+    const navigate = useNavigate();
 
 
     const [showEmail, setShowEmail] = useState(false)
@@ -29,24 +29,28 @@ const navigate = useNavigate();
             <div className="flex justify-between items-center p-4 border-b border-gray-200 bg-white">
                 <button className="text-gray-500"></button>
                 <h1 className="text-lg font-semibold">Settings</h1>
-                <button className="text-pink-500 font-medium" onClick={()=>navigate("/home")}>Done</button>
+                <button className="text-pink-500 font-medium" onClick={() => navigate("/home")}>Done</button>
             </div>
 
             {/* Main Content */}
             <div className="px-4 my-2 space-y-3">
                 {/* Account Settings */}
-                <button className="py-4 flex items-center justify-center  w-full px-4 bg-white rounded-xl">
-                    <div className="flex flex-col items-center justify-center  ">
+                <button className="py-4 flex items-center justify-center  w-full px-4 bg-white rounded-xl"
+                    onClick={() => navigate("/package/platinum")}
+                >
+                    <div className="flex flex-col items-center justify-center ">
 
                         <img src={logo2} alt="logo1" className="w-44 mb-2" />
 
-                        <p className="text-xs text-gray-500">See Who Likes You & More</p>
+                        <p className="text-xs text-gray-500">Level up every action you take on Tinder</p>
 
                     </div>
                 </button>
 
                 {/* Tinder Plus/Gold */}
-                <button className="py-4 flex items-center justify-center  w-full px-4 bg-white">
+                <button className="py-4 flex items-center justify-center  w-full px-4 bg-white"
+                    onClick={() => navigate("/package/gold")}
+                >
                     <div className="flex flex-col items-center justify-center  ">
 
                         <img src={logo3} alt="logo1" className="w-44 mb-2" />
@@ -57,18 +61,22 @@ const navigate = useNavigate();
                 </button>
 
                 {/* Verification */}
-                <button className="py-4  flex items-center justify-center  w-full px-4 bg-white">
+                <button
+                    onClick={() => navigate("/package/plus")}
+                    className="py-4  flex items-center justify-center  w-full px-4 bg-white">
                     <div className="flex flex-col items-center justify-center  ">
 
                         <img src={logo1} alt="logo1" className="w-36 mb-1" />
 
-                        <p className="text-xs text-gray-500">Level up every action you take on Tinder</p>
+                        <p className="text-xs text-gray-500">See Who Likes You & More</p>
 
                     </div>
                 </button>
 
                 {/* Remaining */}
-                <button className=" relative pb-4  flex items-center justify-center  w-full px-4 bg-white">
+                <button
+                    onClick={() => navigate("/package/all-plans")}
+                    className=" relative pb-4  flex items-center justify-center  w-full px-4 bg-white">
                     <div className="flex flex-col  items-center justify-center  ">
 
                         {/* <img src={logo1} alt="logo1" className="w-36 mb-1" /> */}
@@ -85,7 +93,9 @@ const navigate = useNavigate();
                 </button>
 
                 {/* Go incognito */}
-                <button className=" relative py-4  flex items-center justify-center  w-full px-4 bg-white">
+                <button
+                    onClick={() => navigate("/package/boost")}
+                    className=" relative py-4  flex items-center justify-center  w-full px-4 bg-white">
                     <div className="flex flex-col  items-center justify-center  ">
 
                         {/* <img src={logo1} alt="logo1" className="w-36 mb-1" /> */}
@@ -884,16 +894,6 @@ const navigate = useNavigate();
 
 
 
-
-
-
-
-
-
-
-
-
-
                 {/* Control Who Sees You */}
                 <div className="py-2 border-t border-gray-200">
                     <h3 className="text-xs font-medium text-gray-500 py-2">CONTROL WHO SEES YOU</h3>
@@ -966,7 +966,7 @@ const navigate = useNavigate();
                                 When enabled, your profile may be shown more to people who are actively using Tinder
                             </p>
                         </div>
-                        <div className="relative inline-block w-12 align-middle select-none">
+                        {/* <div className="relative inline-block w-12 align-middle select-none">
                             <input
                                 type="checkbox"
                                 name="toggle-recently"
@@ -979,7 +979,7 @@ const navigate = useNavigate();
                                 htmlFor="toggle-recently"
                                 className={`toggle-label block overflow-hidden h-6 rounded-full cursor-pointer ${recentlyActive ? "bg-pink-500" : "bg-gray-300"}`}
                             ></label>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 

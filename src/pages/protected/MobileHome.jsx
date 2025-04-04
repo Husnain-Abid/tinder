@@ -1,22 +1,201 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import image1 from "../../asset/image1.jpeg"
 import image3 from "../../asset/image2.jpg"
 import avatar from "../../asset/image3.jpg"
 import redlogo from "../../asset/logo.png"
 import image2 from "../../asset/avatar.jpg"
-import { useNavigate } from 'react-router-dom'
+import { redirect, useNavigate } from 'react-router-dom'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import TinderProfileExpand from './TinderProfileExpand'
 
 
 
 export default function MobileHome() {
 
-const navigate = useNavigate();
+  // carosal start 
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const [showProfileInfo, setShowProfileInfo] = useState(false)
+
+  const toggleProfileInfo = () => {
+    setShowProfileInfo(!showProfileInfo)
+  }
+
+
+
+  const packages = [
+
+    {
+      name: "Tinder Platinum™",
+      description: "Level up every action you take on Tinder",
+      bgColor: "bg-gray-800",
+      color: "text-gray-800",
+      fillColor: "fill-gray-800",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 fill-gray-800"
+          fill="fill-gray-800"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
+          />
+        </svg>
+      ),
+      buttonText: "Get Tinder Platinum™",
+      redirect: "/package/platinum"
+    },
+
+    {
+      name: "See Who Likes You",
+      description: "See Who Likes You &",
+      bgColor: "bg-yellow-800",
+      color: "text-yellow-800",
+      fillColor: "fill-yellow-800",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 fill-amber-500 text-amber-500"
+          fill="fill-yellow-800"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
+          />
+        </svg>
+      ),
+      buttonText: "Get Tinder Gold™",
+      redirect: "/package/gold"
+    },
+
+    {
+      name: "Tinder Plus™",
+      description: "Unlimited likes, Rewinds and More!",
+      bgColor: "bg-red-800",
+      color: "text-red-800",
+      fillColor: "fill-red-800 ",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 fill-red-800 text-red-800"
+          fill="fill-red-800"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
+          />
+        </svg>
+      ),
+      buttonText: "Get Tinder Plus™",
+      redirect: "/package/plus"
+    },
+
+    {
+      name: "Upgrade Your Love Life",
+      description: "Subscribe to Tinder and get access to premium features",
+      bgColor: "bg-red-600",
+      color: "text-red-600",
+      fillColor: "fill-red-600 ",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 fill-red-500 text-red-500"
+          fill="fill-red-600 "
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
+          />
+        </svg>
+      ),
+      buttonText: "See All Plans",
+      redirect: "/package/all-plans"
+    },
+
+    {
+      name: "Boost",
+      description: "Be a top profile in your area for 30 minutes to get more matches.",
+      bgColor: "bg-pink-500",
+      color: "text-pink-500",
+      fillColor: "fill-pink-500",
+      icon: (
+
+
+        <svg xmlns="http://www.w3.org/2000/svg" className='fill-pink-500 text-pink-500' width="24" height="24" viewBox="0 0 24 24" fill="fill-pink-600" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap-icon lucide-zap"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg>
+
+
+      ),
+      buttonText: "My Boosts",
+      redirect: "/package/boost"
+    },
+
+
+  ];
+
+  // Use effect to automatically change the index every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex === packages.length - 1 ? 0 : prevIndex + 1));
+    }, 3000); // Change every 3 seconds
+
+    return () => clearInterval(interval); // Clean up interval on component unmount
+  }, [packages.length]);
+
+
+
+  // carosal end 
+
+
+  const navigate = useNavigate();
 
   const [activeTab, setActiveTab] = useState("home");
 
   const handleTabChange = (tab) => {
     setActiveTab(tab)
   }
+
+
+
+
+
 
   return (
 
@@ -65,7 +244,7 @@ const navigate = useNavigate();
                     <span className="text-2xl text-white">20</span>
 
                     {/* Info Button */}
-                    <button className="ml-auto bg-black/30 p-1 rounded-full">
+                    <button onClick={toggleProfileInfo} className="ml-auto bg-black/30 p-1 rounded-full" >
                       <svg xmlns="http://www.w3.org/2000/svg" className="text-white" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-up"><circle cx="12" cy="12" r="10" /><path d="m16 12-4-4-4 4" /><path d="M12 16V8" /></svg>
                     </button>
 
@@ -869,7 +1048,7 @@ const navigate = useNavigate();
                 {/* Action Buttons */}
                 <div className="flex justify-between w-full max-w-xs px-4 mt-4">
                   {/* Settings Button */}
-                  <div className=" relative top-0 flex flex-col items-center" onClick={()=>navigate("/setting")} >
+                  <div className=" relative top-0 flex flex-col items-center" onClick={() => navigate("/setting")} >
                     <button className="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center mb-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -896,7 +1075,7 @@ const navigate = useNavigate();
                   </div>
 
                   {/* Edit Profile Button */}
-                  <div className="relative top-6 flex flex-col items-center" onClick={()=>navigate("/edit-profile")}>
+                  <div className="relative top-6 flex flex-col items-center" onClick={() => navigate("/edit-profile")}>
                     <button className="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center mb-2 relative">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -918,7 +1097,7 @@ const navigate = useNavigate();
                   </div>
 
                   {/* Add Media Button */}
-                  <div className="relative top-0 flex flex-col items-center" onClick={()=>navigate("/add-media")}>
+                  <div className="relative top-0 flex flex-col items-center" onClick={() => navigate("/add-media")}>
                     <button className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-red-500 flex items-center justify-center mb-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -953,45 +1132,78 @@ const navigate = useNavigate();
               </div>
 
               {/* Tinder Platinum Section */}
+
               <div className="bg-gray-100 px-6 py-8 flex flex-col items-center">
-                <div className="flex items-center mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={activeTab === "home" ? 2.5 : 1.5}
+
+
+                {/* Carousel Section with sliding animation */}
+                <div className="relative overflow-hidden mt-2 w-full max-w-lg">
+                  {/* Slide Wrapper */}
+                  <div
+                    className="flex transition-transform duration-700 ease-in-out"
+                    style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
-                    />
-                  </svg>
-                  <span className="text-lg font-bold text-gray-800">Tinder Platinum™</span>
+
+
+
+                    {packages.map((pkg, index) => (
+                      <>
+
+                        <div
+                          key={index}
+                          className="flex-shrink-0 w-full px-4 flex flex-col items-center "
+                        >
+                          <div className="flex items-center mb-2">
+                            {pkg.icon}
+
+                            <span className="text-lg font-bold text-gray-800">{pkg.name}</span>
+                          </div>
+                          <p className="text-gray-600 text-sm mb-8 text-center">{pkg.description}</p>
+                        </div>
+                      </>
+
+                    ))}
+
+
+                  </div>
                 </div>
-                <p className="text-gray-600 text-sm mb-8 text-center">Level up every action you take on Tinder</p>
 
                 {/* Pagination Dots */}
                 <div className="flex space-x-2 mb-6">
-                  <div className="w-2 h-2 rounded-full bg-gray-800"></div>
-                  <div className="w-2 h-2 rounded-full bg-gray-300"></div>
-                  <div className="w-2 h-2 rounded-full bg-gray-300"></div>
-                  <div className="w-2 h-2 rounded-full bg-gray-300"></div>
-                  <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+                  {packages.map((pkg, index) => (
+                    <div
+                      key={index}
+                      className={`w-2 h-2 rounded-full ${currentIndex === index ? pkg.bgColor : 'bg-gray-300'}`}
+                    ></div>
+                  ))}
                 </div>
 
-                {/* Get Platinum Button */}
-                <button className="bg-white text-gray-800 font-bold py-3 px-8 rounded-full border border-gray-300 shadow-sm">
-                  Get Tinder Platinum™
+
+
+
+                {/* Get packages Button */}
+                <button
+
+                  // onClick={()=>navigate(packages[currentIndex].redirect)}
+
+                  onClick={() => {
+                    console.log(packages[currentIndex].redirect); // Debugging
+                    navigate(packages[currentIndex].redirect);
+                  }}
+
+
+                  className={`bg-white ${packages[currentIndex].color} text-gray-800 font-bold py-3 px-8 rounded-full border border-gray-300 shadow-sm`}>
+                  {packages[currentIndex].buttonText}
+
+
+
                 </button>
+
+
+
               </div>
+
+
             </div>
 
 
@@ -1108,6 +1320,11 @@ const navigate = useNavigate();
           {/* <span className="text-xs mt-1">Profile</span> */}
         </button>
       </div>
+
+
+
+      {/* Profile Info Expanded View */}
+      {showProfileInfo && <TinderProfileExpand showProfileInfo={showProfileInfo} setShowProfileInfo={setShowProfileInfo} />}
 
 
     </div>

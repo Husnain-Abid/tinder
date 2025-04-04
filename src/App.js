@@ -21,6 +21,11 @@ import Select from './pages/common/products/Select.jsx'
 import EditProfile from './pages/protected/EditProfile.jsx'
 import SettingsPage from './pages/protected/SettingsPage.jsx'
 import AddMedia from './pages/protected/AddMedia.jsx'
+import PlatinumPackage from './pages/protected/packages/PlatinumPackage.jsx'
+import GoldPackage from './pages/protected/packages/GoldPackage.jsx'
+import PlusPackage from './pages/protected/packages/PlusPackage.jsx'
+import TinderAllPlans from './pages/protected/packages/TinderAllPlans.jsx'
+import MyBoostPackage from './pages/protected/packages/MyBoostPackage.jsx'
 
 function App() {
 
@@ -65,7 +70,15 @@ function App() {
         <Route path='/edit-profile' element={<EditProfile />}></Route>
         <Route path='/setting' element={<SettingsPage />}></Route>
         <Route path='/add-media' element={<AddMedia />}></Route>
-        
+
+
+        {/* packages pages  */}
+        <Route path='/package/platinum' element={<PlatinumPackage />}></Route>
+        <Route path='/package/gold' element={<GoldPackage />}></Route>
+        <Route path='/package/plus' element={<PlusPackage />}></Route>
+        <Route path='/package/all-plans' element={<TinderAllPlans />}></Route>
+        <Route path='/package/boost' element={<MyBoostPackage />}></Route>
+
 
 
 
