@@ -57,7 +57,7 @@ const TinderBirthday = () => {
 
 
   return (
-    <div className="flex flex-col h-screen bg-white">
+    <div className="flex flex-col h-screen bg-white md:max-w-6xl md:mx-auto">
       {/* Progress Bar */}
    {/* Progress Bar */}
    <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">

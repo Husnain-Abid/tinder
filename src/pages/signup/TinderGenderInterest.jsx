@@ -48,7 +48,7 @@ const TinderGenderInterest = () => {
 
 
   return (
-    <div className="flex flex-col h-screen bg-white">
+    <div className="flex flex-col h-screen bg-white md:max-w-6xl md:mx-auto">
       {/* Progress Bar */}
    <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
           <div className="h-full bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 w-5/12"></div>

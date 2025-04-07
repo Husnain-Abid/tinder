@@ -37,7 +37,7 @@ const TinderOrientation = () => {
 
 
   return (
-    <div className="flex flex-col h-screen bg-white">
+    <div className="flex flex-col h-screen bg-white md:max-w-6xl md:mx-auto">
       {/* Status Bar */}
 
 

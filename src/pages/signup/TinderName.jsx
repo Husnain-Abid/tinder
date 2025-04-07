@@ -8,11 +8,12 @@ const TinderName = () => {
 
 
   return (
-    <div className="flex flex-col h-screen bg-white">
-   {/* Progress Bar */}
-   <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
-          <div className="h-full bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 w-1/12"></div>
-        </div>
+    <div className="flex flex-col h-screen bg-white md:max-w-6xl md:mx-auto">
+      {/* Progress Bar */}
+      <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+        <div className="h-full bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 w-1/12"></div>
+      </div>
+
 
 
 
@@ -50,10 +51,18 @@ const TinderName = () => {
       {/* Next Button - Hidden in this view but included for consistency */}
       <div className="px-4 pb-8 opacity-1">
         <button className="w-full py-3.5 rounded-full text-center font-medium bg-gray-800 text-white"
-        onClick={() => navigate("/birthday")}
-        
+          onClick={() => navigate("/birthday")}
+
         >Next</button>
       </div>
+
+
+
+
+
+
+
+
     </div>
   )
 }

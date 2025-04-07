@@ -76,13 +76,6 @@ const TinderProfileExpand = ({ showProfileInfo, setShowProfileInfo }) => {
 
 
 
-
-
-
-
-
-
-
                     {/* Progress Bar */}
                     <div className="absolute top-0 left-0 right-0 z-20 flex justify-between px-2 py-2">
                         {profile.images.map((_, index) => (

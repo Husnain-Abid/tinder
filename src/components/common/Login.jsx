@@ -95,7 +95,9 @@ const LoginPopup = ({ isOpen, onClose }) => {
         </button>
 
         {/* Facebook login button */}
-        <button className="flex items-center justify-center w-full py-1.5 px-4 rounded-full border border-gray-300 mb-2">
+        <button
+        onClick={() => navigate("/user-name")}
+        className="flex items-center justify-center w-full py-1.5 px-4 rounded-full border border-gray-300 mb-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-4 w-4 mr-2 "
@@ -108,7 +110,9 @@ const LoginPopup = ({ isOpen, onClose }) => {
         </button>
 
         {/* Phone login button */}
-        <button className="flex items-center justify-center w-full py-1.5 px-4 rounded-full border border-gray-300 mb-4">
+        <button 
+                onClick={() => navigate("/get-number")}        
+        className="flex items-center justify-center w-full py-1.5 px-4 rounded-full border border-gray-300 mb-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-4 w-4 mr-2 text-gray-700"

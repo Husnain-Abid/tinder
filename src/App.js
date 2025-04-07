@@ -35,6 +35,7 @@ import TinderName from './pages/signup/TinderName.jsx'
 import TinderInterest from './pages/signup/TinderInterest.jsx'
 import TinderGender from './pages/signup/TinderGender.jsx'
 import TinderGenderInterest from './pages/signup/TinderGenderInterest.jsx'
+import TinderGetNumber from './pages/signup/TinderGetNumber.jsx'
 
 function App() {
 
@@ -96,6 +97,7 @@ function App() {
         <Route path='/lifestyle' element={<TinderLifestyle />}></Route>
         <Route path='/interest' element={<TinderInterest />}></Route>
         <Route path='/add-photos' element={<TinderAddPhotos />}></Route>
+        <Route path='/get-number' element={<TinderGetNumber />}></Route>
 
 
       </Routes>
