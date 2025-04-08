@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@react-google-maps/api": "^2.20.5",
-    "@react-spring/web": "^9.7.5",
     "@reduxjs/toolkit": "^2.5.0",
     "axios": "^1.7.9",
     "cra-template": "1.2.0",
