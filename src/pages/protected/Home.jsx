@@ -10,11 +10,11 @@ const HomeAfterLogin = () => {
     return (
         <>
 
-     <DesktopHome />
+            <DesktopHome />
 
             {/* Mobile  */}
-           
-<MobileHome/>
+
+            <MobileHome />
 
 
         </>

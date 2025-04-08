@@ -36,6 +36,7 @@ import TinderInterest from './pages/signup/TinderInterest.jsx'
 import TinderGender from './pages/signup/TinderGender.jsx'
 import TinderGenderInterest from './pages/signup/TinderGenderInterest.jsx'
 import TinderGetNumber from './pages/signup/TinderGetNumber.jsx'
+import Meeting from './pages/protected/Meeting.jsx'
 
 function App() {
 
@@ -77,6 +78,8 @@ function App() {
         <Route path='/edit-profile' element={<EditProfile />}></Route>
         <Route path='/setting' element={<SettingsPage />}></Route>
         <Route path='/add-media' element={<AddMedia />}></Route>
+        <Route path='/meeting' element={<Meeting />}></Route>
+
 
 
         {/* packages pages  */}
