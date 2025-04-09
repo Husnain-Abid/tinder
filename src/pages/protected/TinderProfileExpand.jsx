@@ -133,15 +133,15 @@ const TinderProfileExpand = ({ showProfileInfo, setShowProfileInfo, toggleProfil
 
 
 
- {/* Profile Info Overlay */}
- <div className="absolute bottom-4 left-0 right-0 p-4  ">
-                    {/* Recently Active */}
-                  
-                    {/* Name and Age */}
-                    <div className="flex items-center">
-                  
-                        {/* Info Button */}
-                        {/* <button onClick={toggleProfileInfo} className="ml-auto bg-black/30 p-1 rounded-full" >
+                        {/* Profile Info Overlay */}
+                        <div className="absolute bottom-4 left-0 right-0 p-4  ">
+                            {/* Recently Active */}
+
+                            {/* Name and Age */}
+                            <div className="flex items-center">
+
+                                {/* Info Button */}
+                                {/* <button onClick={toggleProfileInfo} className="ml-auto bg-black/30 p-1 rounded-full" >
                         
                             <svg xmlns="http://www.w3.org/2000/svg" className="text-white" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-down-icon lucide-circle-arrow-down"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="m8 12 4 4 4-4"/></svg>
                         
@@ -149,10 +149,10 @@ const TinderProfileExpand = ({ showProfileInfo, setShowProfileInfo, toggleProfil
                         </button> */}
 
 
-                    </div>
+                            </div>
 
-                  
-                </div>
+
+                        </div>
 
 
 
@@ -577,7 +577,7 @@ const TinderProfileExpand = ({ showProfileInfo, setShowProfileInfo, toggleProfil
                     </button>
 
                     {/* Super Like Button */}
-                    <button className="bg-white p-4 rounded-full shadow-lg">
+                    <button onClick={() => setShowProfileInfo(false)} className="bg-white p-4 rounded-full shadow-lg">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-4 w-4 text-blue-500"
@@ -589,7 +589,7 @@ const TinderProfileExpand = ({ showProfileInfo, setShowProfileInfo, toggleProfil
                     </button>
 
                     {/* Like Button */}
-                    <button className="bg-white p-4 rounded-full shadow-lg">
+                    <button onClick={() => setShowProfileInfo(false)} className="bg-white p-4 rounded-full shadow-lg">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-6 w-6 text-green-500"
