@@ -120,9 +120,6 @@ export default function DesktopHome() {
                     </div>
 
 
-
-
-
                 </div>
 
 

@@ -5,7 +5,7 @@ import image3 from "../../asset/image2.jpg"
 import avatar from "../../asset/image3.jpg"
 
 
-const TinderProfileExpand = ({ showProfileInfo, setShowProfileInfo }) => {
+const TinderProfileExpand = ({ showProfileInfo, setShowProfileInfo, toggleProfileInfo }) => {
     const [showFullProfile, setShowFullProfile] = useState(true)
     const [showReportModal, setShowReportModal] = useState(false)
 
@@ -89,11 +89,6 @@ const TinderProfileExpand = ({ showProfileInfo, setShowProfileInfo }) => {
 
 
                     {/* Profile Image */}
-                    {/* <img src={image1} alt="Profile" className="w-full h-full object-cover" /> */}
-
-
-
-                    {/* Image */}
                     <div className="relative w-full h-96 ">
                         <img
                             src={profile.images[currentImageIndex] || "/placeholder.svg"}
@@ -135,6 +130,31 @@ const TinderProfileExpand = ({ showProfileInfo, setShowProfileInfo }) => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>
                         </button>
+
+
+
+ {/* Profile Info Overlay */}
+ <div className="absolute bottom-4 left-0 right-0 p-4  ">
+                    {/* Recently Active */}
+                  
+                    {/* Name and Age */}
+                    <div className="flex items-center">
+                  
+                        {/* Info Button */}
+                        <button onClick={toggleProfileInfo} className="ml-auto bg-black/30 p-1 rounded-full" >
+                            {/* <svg xmlns="http://www.w3.org/2000/svg" className="text-white" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-up"><circle cx="12" cy="12" r="10" /><path d="m16 12-4-4-4 4" /><path d="M12 16V8" /></svg> */}
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" className="text-white" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-down-icon lucide-circle-arrow-down"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="m8 12 4 4 4-4"/></svg>
+                        
+                        
+                        </button>
+
+
+                    </div>
+
+                  
+                </div>
+
 
 
                     </div>
