@@ -288,14 +288,46 @@ export default function MobileHome() {
         {activeTab === "home" && (
           <div className="p-4">
             {/* Tinder Logo */}
+
+
             <div className="mb-4 flex justify-between items-center">
               <img src={redlogo} alt="logo" className='w-24' />
-              <div className='p-2 bg-white rounded-full'>
-                <svg xmlns="http://www.w3.org/2000/svg" className='text-pink-500' width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
-                </svg>
-              </div>
+
+
+
+
+{showProfileInfo ? (
+  <div className='p-2 bg-white rounded-full' onClick={toggleProfileInfo}>
+    {/* Info Icon */}
+    <svg xmlns="http://www.w3.org/2000/svg" className="text-pink-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <path d="m16 12-4-4-4 4" />
+      <path d="M12 16V8" />
+    </svg>
+  </div>
+) : (
+  <div className='p-2 bg-white rounded-full' >
+    {/* Arrow Down Icon */}
+    <svg xmlns="http://www.w3.org/2000/svg" className="text-pink-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
+    </svg>
+  </div>
+)}
+
+
+
+
+
+
+
+
+
+
+
             </div>
+
+
+
 
             {/* Main Content - Profile Card */}
             <div className="flex flex-col justify-center items-center " style={{ minHeight: "calc(100vh - 20vh)" }}>
@@ -310,7 +342,7 @@ export default function MobileHome() {
                       display: index < currentIndex ? "none" : "block",
                     }}
                   >
-                    <ResponsiveProfileCard profile={profile} onSwipe={handleSwipe} showProfileInfo={showProfileInfo} setShowProfileInfo={setShowProfileInfo} toggleProfileInfo={toggleProfileInfo}/>
+                    <ResponsiveProfileCard profile={profile} onSwipe={handleSwipe} showProfileInfo={showProfileInfo} setShowProfileInfo={setShowProfileInfo} toggleProfileInfo={toggleProfileInfo} />
                   </div>
                 ))}
 
