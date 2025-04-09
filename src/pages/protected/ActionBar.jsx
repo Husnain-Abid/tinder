@@ -1,18 +1,18 @@
 "use client"
 
-const ActionBar = ({ 
-    
-    
-    
-    // onHide, onNope, onLike, onOpenProfile, onCloseProfile, onSuperLike, onNextPhoto
-
-
-    onHide,    onNope, onLike,    onSuperLike, onNextPhoto, onPreviousPhoto,
+const ActionBar = ({
 
 
 
+  // onHide, onNope, onLike, onOpenProfile, onCloseProfile, onSuperLike, onNextPhoto
 
- }) => {
+
+  onHide, onNope, onLike, onSuperLike, onNextPhoto, onPreviousPhoto,
+
+
+
+
+}) => {
   return (
     <div className="flex items-center justify-between gap-4 bg-gray-100 py-2 px-4 mt-4 w-full">
       {/* Hide Button */}
@@ -59,8 +59,8 @@ const ActionBar = ({
       </button>
 
       {/* Open Profile Button */}
-      <button
-        // onClick={onOpenProfile}
+      {/* <button
+        onClick={onOpenProfile}
         className="flex items-center space-x-1 px-2 py-1 border-gray-300 rounded hover:bg-gray-200"
       >
         <div className="flex items-center justify-center w-5 h-5 border border-gray-400 rounded">
@@ -75,11 +75,11 @@ const ActionBar = ({
           </svg>
         </div>
         <span className="text-sm text-gray-600">Open Profile</span>
-      </button>
+      </button> */}
 
       {/* Close Profile Button */}
-      <button
-        // onClick={onCloseProfile}
+      {/* <button
+        onClick={onCloseProfile}
         className="flex items-center space-x-1 px-2 py-1  border-gray-300 rounded hover:bg-gray-200"
       >
         <div className="flex items-center justify-center w-5 h-5 border border-gray-400 rounded">
@@ -94,7 +94,7 @@ const ActionBar = ({
           </svg>
         </div>
         <span className="text-sm text-gray-600">Close Profile</span>
-      </button>
+      </button> */}
 
       {/* Super Like Button */}
       <button
@@ -120,14 +120,52 @@ const ActionBar = ({
         <span className="text-sm text-gray-600">Super Like</span>
       </button>
 
+
+
+
+
+      {/* Previous Photo Button */}
+      <button
+        onClick={(e) => onPreviousPhoto(e)}
+        className="flex items-center space-x-1 px-4 py-1  border-gray-300 rounded hover:bg-gray-200"
+      >
+
+
+        <div className="flex items-center justify-center w-5 h-5 border border-gray-400 rounded mr-1">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-left-dash-icon lucide-arrow-big-left-dash"><path d="M19 15V9" /><path d="M15 15h-3v4l-7-7 7-7v4h3v6z" /></svg>
+
+
+        </div>
+
+
+
+        <span className="text-sm text-gray-600">Previous Photo</span>
+      </button>
+
+
+
+
       {/* Next Photo Button */}
       <button
         // onClick={onNextPhoto}
         onClick={(e) => onNextPhoto(e)}
         className="flex items-center space-x-1 px-4 py-1 border-gray-300 rounded hover:bg-gray-200"
       >
+
+
+        <div className="flex items-center justify-center w-5 h-5 border border-gray-400 rounded mr-1">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-right-dash-icon lucide-arrow-big-right-dash"><path d="M5 9v6" /><path d="M9 9h3V5l7 7-7 7v-4H9V9z" /></svg>
+
+        </div>
+
+
+
+
         <span className="text-sm text-gray-600">Next Photo</span>
       </button>
+
     </div>
   )
 }
