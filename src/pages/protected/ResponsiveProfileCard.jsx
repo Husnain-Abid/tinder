@@ -1,15 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import TinderProfileExpand from './TinderProfileExpand'
 
-export default function ResponsiveProfileCard({ profile, onSwipe }) {
+export default function ResponsiveProfileCard({ profile, onSwipe, showProfileInfo, setShowProfileInfo, toggleProfileInfo }) {
 
 
-
-    const [showProfileInfo, setShowProfileInfo] = useState(false)
-
-    const toggleProfileInfo = () => {
-        setShowProfileInfo(!showProfileInfo)
-    }
 
 
 
@@ -203,7 +197,7 @@ export default function ResponsiveProfileCard({ profile, onSwipe }) {
 
     return (
         <>
-{!showProfileInfo && (
+
 
             <div
                 ref={cardRef}
@@ -395,7 +389,6 @@ export default function ResponsiveProfileCard({ profile, onSwipe }) {
 
             </div>
 
-)}
 
 
 
@@ -403,10 +396,6 @@ export default function ResponsiveProfileCard({ profile, onSwipe }) {
 
 
 
-
-
-            {/* Profile Info Expanded View */}
-            {showProfileInfo && <TinderProfileExpand showProfileInfo={showProfileInfo} setShowProfileInfo={setShowProfileInfo} toggleProfileInfo={toggleProfileInfo} />}
 
 
 

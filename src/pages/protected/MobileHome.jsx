@@ -28,6 +28,15 @@ import ResponsiveProfileCard from './ResponsiveProfileCard'
 
 export default function MobileHome() {
 
+
+  const [showProfileInfo, setShowProfileInfo] = useState(false)
+
+  const toggleProfileInfo = () => {
+    setShowProfileInfo(!showProfileInfo)
+  }
+
+
+
   // carosal start 
 
   const [currentPackageIndex, setCurrentPackageIndex] = useState(0);
@@ -277,45 +286,45 @@ export default function MobileHome() {
       <div className="flex-grow overflow-y-auto pb-16">
         {/* Home Tab Content */}
         {activeTab === "home" && (
-      <div className="p-4">
-      {/* Tinder Logo */}
-      <div className="mb-4 flex justify-between items-center">
-        <img src={redlogo} alt="logo" className='w-24' />
-        <div className='p-2 bg-white rounded-full'>
-          <svg xmlns="http://www.w3.org/2000/svg" className='text-pink-500' width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
-          </svg>
-        </div>
-      </div>
-    
-      {/* Main Content - Profile Card */}
-      <div className="flex flex-col justify-center items-center " style={{ minHeight: "calc(100vh - 20vh)" }}>
-        {/* Profile Cards */}
-        <div className="relative flex-grow w-full flex items-center justify-center z-0 bg-gray-100 p-4">
-          {profiles.map((profile, index) => (
-            <div
-              key={profile.id}
-              className={`absolute ${index < currentIndex ? "hidden" : ""}`}
-              style={{
-                zIndex: profiles.length - index,
-                display: index < currentIndex ? "none" : "block",
-              }}
-            >
-              <ResponsiveProfileCard profile={profile} onSwipe={handleSwipe} />
+          <div className="p-4">
+            {/* Tinder Logo */}
+            <div className="mb-4 flex justify-between items-center">
+              <img src={redlogo} alt="logo" className='w-24' />
+              <div className='p-2 bg-white rounded-full'>
+                <svg xmlns="http://www.w3.org/2000/svg" className='text-pink-500' width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
+                </svg>
+              </div>
             </div>
-          ))}
-    
-          {/* Show message when all profiles are swiped */}
-          {currentIndex >= profiles.length && (
-            <div className="text-center p-8 bg-white rounded-lg shadow-md">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">No more profiles</h2>
-              <p className="text-gray-600">Check back later for more matches!</p>
+
+            {/* Main Content - Profile Card */}
+            <div className="flex flex-col justify-center items-center " style={{ minHeight: "calc(100vh - 20vh)" }}>
+              {/* Profile Cards */}
+              <div className="relative flex-grow w-full flex items-center justify-center z-0 bg-gray-100 p-4">
+                {profiles.map((profile, index) => (
+                  <div
+                    key={profile.id}
+                    className={`absolute ${index < currentIndex ? "hidden" : ""}`}
+                    style={{
+                      zIndex: profiles.length - index,
+                      display: index < currentIndex ? "none" : "block",
+                    }}
+                  >
+                    <ResponsiveProfileCard profile={profile} onSwipe={handleSwipe} showProfileInfo={showProfileInfo} setShowProfileInfo={setShowProfileInfo} toggleProfileInfo={toggleProfileInfo}/>
+                  </div>
+                ))}
+
+                {/* Show message when all profiles are swiped */}
+                {currentIndex >= profiles.length && (
+                  <div className="text-center p-8 bg-white rounded-lg shadow-md">
+                    <h2 className="text-2xl font-bold text-gray-800 mb-4">No more profiles</h2>
+                    <p className="text-gray-600">Check back later for more matches!</p>
+                  </div>
+                )}
+              </div>
             </div>
-          )}
-        </div>
-      </div>
-    </div>
-    
+          </div>
+
         )}
 
 
@@ -1243,6 +1252,17 @@ export default function MobileHome() {
           {/* <span className="text-xs mt-1">Profile</span> */}
         </button>
       </div>
+
+
+
+
+
+
+
+      {/* Profile Info Expanded View */}
+      {showProfileInfo && <TinderProfileExpand showProfileInfo={showProfileInfo} setShowProfileInfo={setShowProfileInfo} toggleProfileInfo={toggleProfileInfo} />}
+
+
 
 
 

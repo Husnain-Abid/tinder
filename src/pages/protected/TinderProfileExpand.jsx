@@ -65,13 +65,13 @@ const TinderProfileExpand = ({ showProfileInfo, setShowProfileInfo, toggleProfil
 
 
     return (
-        <div className="relative min-h-screen bg-gray-100">
+        <div className="relative w-full min-h-screen bg-gray-100">
 
 
             {/* Main Profile Card */}
-            <div className="relative h-screen overflow-y-auto bg-white  pb-20">
+            <div className="relative h-screen w-full overflow-y-auto bg-white  pb-20">
                 {/* Profile Image */}
-                <div className="relative px-4  mt-2">
+                <div className="relative px-4 w-full mt-2">
 
 
 
