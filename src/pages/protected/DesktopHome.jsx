@@ -16,6 +16,7 @@ import image6 from "../../asset/image7.jpg"
 import image7 from "../../asset/image6.jpg"
 import image8 from "../../asset/image8.jpg"
 import image9 from "../../asset/image9.jpg"
+import TinderProfileExpandDesktop from "./TinderProfileExpandDesktop";
 
 export default function DesktopHome() {
 
@@ -80,9 +81,9 @@ export default function DesktopHome() {
 
 
 
-// tab 
+    // tab 
 
-const [activeTab, setActiveTab] = useState("matches")
+    const [activeTab, setActiveTab] = useState("matches")
 
 
 
@@ -98,30 +99,47 @@ const [activeTab, setActiveTab] = useState("matches")
                 <div className="flex flex-col flex-grow">
 
                     {/*  Profile Cards */}
-                    <div className="relative flex-grow flex items-center justify-center z-0 bg-gray-100 p-4">
+                    {(activeTab === "matches" || activeTab === "messages") &&
 
-                        {profiles.map((profile, index) => (
-                            <div
-                                key={profile.id}
-                                className={`absolute ${index < currentIndex ? "hidden" : ""}`}
-                                style={{
-                                    zIndex: profiles.length - index,
-                                    display: index < currentIndex ? "none" : "block",
-                                }}
-                            >
-                                <ProfileCard profile={profile} onSwipe={handleSwipe}  activeTab={activeTab} setActiveTab={setActiveTab} />
-                            </div>
-                        ))}
+                        (
 
-                        {/* Show message when all profiles are swiped */}
-                        {currentIndex >= profiles.length && (
-                            <div className="text-center p-8 bg-white rounded-lg shadow-md">
-                                <h2 className="text-2xl font-bold text-gray-800 mb-4">No more profiles</h2>
-                                <p className="text-gray-600">Check back later for more matches!</p>
+                            <div className="relative flex-grow flex items-center justify-center z-0 bg-gray-100 p-4">
+
+                                {profiles.map((profile, index) => (
+                                    <div
+                                        key={profile.id}
+                                        className={`absolute ${index < currentIndex ? "hidden" : ""}`}
+                                        style={{
+                                            zIndex: profiles.length - index,
+                                            display: index < currentIndex ? "none" : "block",
+                                        }}
+                                    >
+                                        <ProfileCard profile={profile} onSwipe={handleSwipe} activeTab={activeTab} setActiveTab={setActiveTab} />
+                                    </div>
+                                ))}
+
+                                {/* Show message when all profiles are swiped */}
+                                {currentIndex >= profiles.length && (
+                                    <div className="text-center p-8 bg-white rounded-lg shadow-md">
+                                        <h2 className="text-2xl font-bold text-gray-800 mb-4">No more profiles</h2>
+                                        <p className="text-gray-600">Check back later for more matches!</p>
+                                    </div>
+                                )}
+
                             </div>
+
+
                         )}
 
-                    </div>
+
+
+
+
+                    {/* Profile Info Expanded View */}
+
+                    {(activeTab === "packages") &&
+                        <TinderProfileExpandDesktop activeTab={activeTab} setActiveTab={setActiveTab} />
+                    }
 
 
                 </div>

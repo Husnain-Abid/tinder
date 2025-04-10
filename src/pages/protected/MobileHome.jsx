@@ -283,6 +283,7 @@ export default function MobileHome() {
     <div className=" flex md:hidden flex-col h-screen bg-gray-100">
       {/* Main Content Area */}
       <div className="flex-grow overflow-y-auto pb-16">
+              
         {/* Home Tab Content */}
         {activeTab === "home" && (
           <div className="p-4">
@@ -344,7 +345,6 @@ export default function MobileHome() {
           </div>
 
         )}
-
 
         {/* Habit Tab Content */}
         {activeTab === "habit" && (
@@ -1140,6 +1140,7 @@ export default function MobileHome() {
 
 
         )}
+        
       </div>
 
       {/* Bottom Navigation */}
