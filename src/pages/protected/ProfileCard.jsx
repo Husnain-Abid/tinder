@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react"
 import ActionBar from "./ActionBar"
 
-export default function ProfileCard({ profile, onSwipe }) {
+export default function ProfileCard({ profile, onSwipe, activeTab, setActiveTab }) {
     // State to track current image index
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
@@ -177,6 +177,17 @@ export default function ProfileCard({ profile, onSwipe }) {
     }, [])
 
     console.log("swipeDirection", swipeDirection);
+    console.log("tab", activeTab);
+
+
+    const onOpenProfile = () => {
+        setActiveTab("packages")
+    }
+
+    const onCloseProfile = () => {
+        setActiveTab("matches")
+    }
+    
 
 
 
@@ -290,14 +301,47 @@ export default function ProfileCard({ profile, onSwipe }) {
                         <span className="text-2xl text-white">{profile.age}</span>
 
                         {/* Info Button */}
-                        <button className="ml-auto bg-black/30 p-1 rounded-full">
+
+                            {(activeTab === "matches" || activeTab === "messages") ?
+
+                                (
+                                    <button className="ml-auto bg-black/30 p-1 rounded-full" onClick={() =>setActiveTab("packages")} >
+
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="text-white" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m16 12-4-4-4 4"></path><path d="M12 16V8"></path></svg>
+                                    </button>
+
+                                ) :
+                                (
+                                    <button className="ml-auto bg-black/30 p-1 rounded-full" onClick={() =>setActiveTab("matches")}>
+
+                                        <svg
+  xmlns="http://www.w3.org/2000/svg"
+  className="text-white lucide lucide-circle-arrow-down-icon lucide-circle-arrow-down"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="2"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M12 8v8" />
+  <path d="m8 12 4 4 4-4" />
+</svg>
 
 
 
-                            <svg xmlns="http://www.w3.org/2000/svg" className="text-white" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m16 12-4-4-4 4"></path><path d="M12 16V8"></path></svg>
 
 
-                        </button>
+                                    </button>
+
+                                )
+                            }
+
+
                     </div>
 
                     {/* Location */}
@@ -382,11 +426,11 @@ export default function ProfileCard({ profile, onSwipe }) {
                 onNope={() => handleActionButton("nope")}
                 onLike={() => handleActionButton("like")}
                 onSuperLike={() => handleActionButton("superlike")}
-                // onNextPhoto={() => nextImage()}
-                // onPreviousPhoto={() => prevImage()}
+                onOpenProfile={() => onOpenProfile()}
+                onCloseProfile={() => onCloseProfile()}
 
                 onNextPhoto={(e) => nextImage(e)}  // Ensure you pass the event here
-                onPreviousPhoto={(e) => prevImage(e)}  // Similarly for previous
+            // onPreviousPhoto={(e) => prevImage(e)}  // Similarly for previous
 
 
             />

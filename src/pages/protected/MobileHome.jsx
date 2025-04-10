@@ -19,7 +19,6 @@ import image6 from "../../asset/image7.jpg"
 import image7 from "../../asset/image6.jpg"
 import image8 from "../../asset/image8.jpg"
 import image9 from "../../asset/image9.jpg"
-import ProfileCard from './ProfileCard'
 import ResponsiveProfileCard from './ResponsiveProfileCard'
 
 
@@ -294,39 +293,26 @@ export default function MobileHome() {
               <img src={redlogo} alt="logo" className='w-24' />
 
 
-
-
-{showProfileInfo ? (
-  <div className='p-2 bg-white rounded-full' onClick={toggleProfileInfo}>
-    {/* Info Icon */}
-    <svg xmlns="http://www.w3.org/2000/svg" className="text-pink-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="10" />
-      <path d="m16 12-4-4-4 4" />
-      <path d="M12 16V8" />
-    </svg>
-  </div>
-) : (
-  <div className='p-2 bg-white rounded-full' >
-    {/* Arrow Down Icon */}
-    <svg xmlns="http://www.w3.org/2000/svg" className="text-pink-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
-    </svg>
-  </div>
-)}
-
-
-
-
-
-
-
-
-
+              {showProfileInfo ? (
+                <div className='p-2 bg-white rounded-full' onClick={toggleProfileInfo}>
+                  {/* Info Icon */}
+                  <svg xmlns="http://www.w3.org/2000/svg" className="text-pink-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="m16 12-4-4-4 4" />
+                    <path d="M12 16V8" />
+                  </svg>
+                </div>
+              ) : (
+                <div className='p-2 bg-white rounded-full' >
+                  {/* Arrow Down Icon */}
+                  <svg xmlns="http://www.w3.org/2000/svg" className="text-pink-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
+                  </svg>
+                </div>
+              )}
 
 
             </div>
-
-
 
 
             {/* Main Content - Profile Card */}
@@ -834,63 +820,39 @@ export default function MobileHome() {
 
         {/* Upgrade Tab Content */}
         {activeTab === "upgrade" && (
-          <div className="p-4">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Upgrade Your Experience</h2>
+          <div className="p-4 flex flex-col justify-between " style={{ height: 'calc(100vh - 10vh)' }}>
+            <div className='border-b-2'>
 
-            <div className="bg-gradient-to-r from-pink-500 to-red-500 rounded-xl p-6 mb-4 text-white">
-              <h3 className="text-xl font-bold mb-2">Tinder Gold™</h3>
-              <p className="mb-4">See who likes you & more!</p>
-              <button className="bg-white text-pink-500 font-bold py-2 px-4 rounded-full">UPGRADE</button>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-md p-4 mb-4">
-              <div className="flex items-center mb-4">
-                <div className="bg-blue-500 p-2 rounded-full mr-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-bold">Super Like</h3>
-                  <p className="text-gray-600 text-sm">Stand out with Super Likes</p>
-                </div>
-                <div className="ml-auto">
-                  <button className="bg-gray-200 text-gray-800 font-bold py-1 px-3 rounded-full text-sm">GET</button>
-                </div>
+              <div class="flex items-center text-2xl" >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-red-500 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
+                <span class="font-bold text-red-500">tinder</span>
               </div>
 
-              <div className="flex items-center">
-                <div className="bg-purple-500 p-2 rounded-full mr-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-bold">Boost</h3>
-                  <p className="text-gray-600 text-sm">Get more matches faster</p>
-                </div>
-                <div className="ml-auto">
-                  <button className="bg-gray-200 text-gray-800 font-bold py-1 px-3 rounded-full text-sm">GET</button>
-                </div>
-              </div>
+              <h4 className="font-bold text-gray-900 ml-4 mb-2">Get Likes</h4>
+
             </div>
+
+
+            <div className='flex justify-center gap-4 flex-col items-center text-center ' >
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /></svg>
+
+
+
+              <p className="mb-4"> Upgrade to Gold to see people who already liked you. </p>
+            </div>
+
+
+
+            <div className='text-center'>
+              <button
+                onClick={() => navigate("/package/gold")}
+                class="bg-amber-400 text-gray-800 font-bold py-3 px-8 rounded-full border border-gray-300 shadow-sm"
+              >See Who Likes You</button>
+            </div>
+
+
+
           </div>
         )}
 

@@ -80,6 +80,10 @@ export default function DesktopHome() {
 
 
 
+// tab 
+
+const [activeTab, setActiveTab] = useState("matches")
+
 
 
     return (
@@ -87,7 +91,7 @@ export default function DesktopHome() {
             {/* Desktop */}
             <div className="hidden md:flex min-h-screen bg-gray-100">
                 {/* Left Sidebar */}
-                <LeftSidebar />
+                <LeftSidebar activeTab={activeTab} setActiveTab={setActiveTab} />
 
 
                 {/* Main Content */}
@@ -105,7 +109,7 @@ export default function DesktopHome() {
                                     display: index < currentIndex ? "none" : "block",
                                 }}
                             >
-                                <ProfileCard profile={profile} onSwipe={handleSwipe} />
+                                <ProfileCard profile={profile} onSwipe={handleSwipe}  activeTab={activeTab} setActiveTab={setActiveTab} />
                             </div>
                         ))}
 

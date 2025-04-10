@@ -41,7 +41,7 @@ const GoldPackage = () => {
 
   return (
     <div className="bg-gradient-to-b from-amber-50 min-h-screen ">
-      <div className="max-w-md mx-auto relative ">
+      <div className="max-w-md md:max-w-6xl mx-auto relative">
         {/* Header with close button and logo */}
         <div className="flex items-center justify-between  p-6">
           <button className="text-gray-500" onClick={()=>navigate("/home")}>
@@ -83,9 +83,15 @@ const GoldPackage = () => {
         <div className="mb-4 px-6">
           <h2 className="text-xl font-bold text-gray-800 mb-4">Select a Plan</h2>
           {/* Swiper Carousel */}
+         
           <Swiper
             spaceBetween={20}
             slidesPerView={1.3}
+            breakpoints={{
+              768: {
+                slidesPerView: 3, // For screens ≥768px (i.e. tablets and desktops)
+              },
+            }}
             className="mySwiper"
           >
             {plans.map((plan) => (
@@ -313,7 +319,7 @@ const GoldPackage = () => {
         </div>
 
         {/* Terms and subscription */}
-        <div className="mt-8 fixed p-6 bottom-0 bg-white">
+        <div className="mt-8 fixed  p-6 bottom-0 bg-white md:w-3/5">
           <p className="text-xs text-gray-600 mb-4">
             By tapping Continue, you will be charged and your subscription will renew for the same price and package
             length until you cancel via Account Settings, and you agree to our{" "}

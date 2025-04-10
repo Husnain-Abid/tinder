@@ -41,10 +41,10 @@ const PlatinumPackage = () => {
 
   return (
     <div className="bg-gradient-to-b from-slate-200 min-h-screen ">
-      <div className="max-w-md mx-auto relative ">
+      <div className="max-w-md md:max-w-6xl mx-auto relative ">
         {/* Header with close button and logo */}
         <div className="flex items-center justify-between  p-6">
-          <button className="text-gray-500" onClick={()=>navigate("/home")}>
+          <button className="text-gray-500" onClick={() => navigate("/home")}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -83,15 +83,23 @@ const PlatinumPackage = () => {
         <div className="mb-4 px-6">
           <h2 className="text-xl font-bold text-gray-800 mb-4">Select a Plan</h2>
           {/* Swiper Carousel */}
+
+
           <Swiper
             spaceBetween={20}
             slidesPerView={1.3}
+            breakpoints={{
+              768: {
+                slidesPerView: 3, // For screens ≥768px (i.e. tablets and desktops)
+              },
+            }}
             className="mySwiper"
           >
             {plans.map((plan) => (
               <SwiperSlide key={plan.id}>
                 <div
-                  className={`border-2 rounded-lg p-4 cursor-pointer h-44 relative ${selectedPlan === plan.id ? "border-gray-500" : "border-gray-300"}`}
+                  className={`border-2 rounded-lg p-4 cursor-pointer h-44 relative ${selectedPlan === plan.id ? "border-gray-500" : "border-gray-300"
+                    }`}
                   onClick={() => setSelectedPlan(plan.id)}
                 >
                   {plan.isBestValue && (
@@ -108,7 +116,12 @@ const PlatinumPackage = () => {
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={3}
+                          d="M5 13l4 4L19 7"
+                        />
                       </svg>
                     </div>
                   )}
@@ -121,6 +134,10 @@ const PlatinumPackage = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+
+
+
+
         </div>
 
 
@@ -350,14 +367,14 @@ const PlatinumPackage = () => {
         </div>
 
         {/* Terms and subscription */}
-        <div className="mt-8 fixed p-6 bottom-0 bg-white">
+        <div className="mt-8 fixed  p-6 bottom-0 bg-white md:w-3/5">
           <p className="text-xs text-gray-600 mb-4">
             By tapping Continue, you will be charged and your subscription will renew for the same price and package
             length until you cancel via Account Settings, and you agree to our{" "}
             <span className="text-blue-500">Terms</span>.
           </p>
 
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center ">
             {/* <div className="flex items-center">
               <svg viewBox="0 0 24 24" className="w-6 h-6 text-gray-800 fill-current">
                 <path d="M12.007 2.888c.176-.21.36-.366.55-.473a2.25 2.25 0 0 1 .72-.235c.695-.094 1.303.039 1.705.283.402.244.7.59.905.934.415.69.573 1.407.573 1.407s.552-.15 1.146.018c.594.169 1.125.642 1.463 1.463.437 1.055.293 2.223.293 2.223s.572.169 1.026.61c.455.44.738 1.12.738 2.037 0 .918-.455 1.781-1.177 2.24-.723.457-1.537.494-1.537.494s.022.488-.234 1.055c-.257.566-.773 1.157-1.737 1.463-.964.305-1.876.137-1.876.137s-.257.511-.793.96c-.537.45-1.364.81-2.497.81-1.134 0-1.953-.36-2.482-.81-.53-.45-.793-.96-.793-.96s-.913.168-1.876-.137c-.964-.306-1.48-.897-1.737-1.463-.257-.567-.234-1.055-.234-1.055s-.814-.037-1.537-.494C2.455 12.74 2 11.877 2 10.96c0-.918.283-1.598.738-2.037.454-.44 1.026-.61 1.026-.61s-.144-1.168.293-2.223c.338-.821.87-1.294 1.463-1.463.594-.169 1.146-.018 1.146-.018s.158-.718.573-1.407c.205-.343.503-.69.905-.934.402-.244 1.01-.377 1.705-.283.26.035.502.118.72.235.19.107.374.262.55.473.088.105.17.218.249.335a.382.382 0 0 0 .64 0c.079-.117.161-.23.249-.335z" />

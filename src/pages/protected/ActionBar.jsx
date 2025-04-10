@@ -7,7 +7,7 @@ const ActionBar = ({
   // onHide, onNope, onLike, onOpenProfile, onCloseProfile, onSuperLike, onNextPhoto
 
 
-  onHide, onNope, onLike, onSuperLike, onNextPhoto, onPreviousPhoto,
+  onHide, onNope, onLike, onSuperLike, onNextPhoto, onOpenProfile, onCloseProfile
 
 
 
@@ -59,7 +59,7 @@ const ActionBar = ({
       </button>
 
       {/* Open Profile Button */}
-      {/* <button
+      <button
         onClick={onOpenProfile}
         className="flex items-center space-x-1 px-2 py-1 border-gray-300 rounded hover:bg-gray-200"
       >
@@ -75,10 +75,10 @@ const ActionBar = ({
           </svg>
         </div>
         <span className="text-sm text-gray-600">Open Profile</span>
-      </button> */}
+      </button>
 
       {/* Close Profile Button */}
-      {/* <button
+      <button
         onClick={onCloseProfile}
         className="flex items-center space-x-1 px-2 py-1  border-gray-300 rounded hover:bg-gray-200"
       >
@@ -94,7 +94,7 @@ const ActionBar = ({
           </svg>
         </div>
         <span className="text-sm text-gray-600">Close Profile</span>
-      </button> */}
+      </button>
 
       {/* Super Like Button */}
       <button
@@ -125,7 +125,7 @@ const ActionBar = ({
 
 
       {/* Previous Photo Button */}
-      <button
+      {/* <button
         onClick={(e) => onPreviousPhoto(e)}
         className="flex items-center space-x-1 px-4 py-1  border-gray-300 rounded hover:bg-gray-200"
       >
@@ -141,7 +141,7 @@ const ActionBar = ({
 
 
         <span className="text-sm text-gray-600">Previous Photo</span>
-      </button>
+      </button> */}
 
 
 

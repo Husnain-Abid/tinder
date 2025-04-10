@@ -91,7 +91,7 @@ const TinderMyBoost = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen">
-      <div className="max-w-md mx-auto bg-white min-h-screen">
+      <div className="max-w-md md:max-w-6xl mx-auto bg-white md:bg-gray-100 min-h-screen">
         {/* Header */}
         <div className="flex justify-between items-center px-4 pt-4 border-gray-200">
           <button className="text-gray-500" onClick={() => navigate("/home")}>
@@ -115,11 +115,11 @@ const TinderMyBoost = () => {
           <div className="relative mb-4">
             <div
               ref={carouselRef}
-              className="flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide"
+              className="flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide mx-auto"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
               {boostPackages.map((pkg, index) => (
-                <div key={pkg.id} className="flex-shrink-0 w-80 snap-center px-4">
+                <div key={pkg.id} className="flex-shrink-0 w-80 md:w-60 snap-center px-4">
                   <div
                     className={`
                       relative border-2 rounded-xl p-6 flex flex-col items-center 
@@ -165,7 +165,7 @@ const TinderMyBoost = () => {
           </div>
 
           {/* Pagination Dots */}
-          <div className="flex justify-center space-x-2 mb-4">
+          <div className=" md:hidden flex justify-center space-x-2 mb-4">
             {boostPackages.map((_, index) => (
               <button
                 key={index}
@@ -177,7 +177,7 @@ const TinderMyBoost = () => {
 
           {/* divider */}
           <div className="relative w-full border-t-2">
-            <div className=" absolute left-36  -top-3 bg-white px-4"> or </div>
+            <div className="block md:hidden absolute left-36  -top-3 bg-white px-4"> or </div>
 
 
           </div>
@@ -187,21 +187,21 @@ const TinderMyBoost = () => {
 
           <div className="mt-10 relative border rounded-lg overflow-hidden">
 
-<div className="bg-slate-200 text-center py-1">1 free boost a month</div>
-<div className="flex justify-between items-center p-4">
-  <div className="flex gap-2">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-500 fill-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
-  <h1 className="font-bold">
-     
-    
-     Get Tinder Gold
-     
-     </h1>
-    
-    </div>
-  <button className="border rounded-full text-sm px-4 py-1">select</button>
-</div>
+            <div className="bg-slate-200 text-center py-1">1 free boost a month</div>
+            <div className="flex justify-between items-center p-4">
+              <div className="flex gap-2">
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-500 fill-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
+                <h1 className="font-bold">
+
+
+                  Get Tinder Gold
+
+                </h1>
+
+              </div>
+              <button className="border rounded-full text-sm px-4 py-1">select</button>
+            </div>
 
 
 

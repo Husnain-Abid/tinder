@@ -6,6 +6,7 @@ import avatar from "../../asset/image3.jpg"
 
 
 const TinderProfileExpand = ({ showProfileInfo, setShowProfileInfo, toggleProfileInfo }) => {
+    
     const [showFullProfile, setShowFullProfile] = useState(true)
     const [showReportModal, setShowReportModal] = useState(false)
 

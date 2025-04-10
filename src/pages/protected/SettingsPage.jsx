@@ -32,6 +32,10 @@ const SettingsPage = () => {
                 <button className="text-pink-500 font-medium" onClick={() => navigate("/home")}>Done</button>
             </div>
 
+
+
+
+
             {/* Main Content */}
             <div className="px-4 my-2 space-y-3">
                 {/* Account Settings */}
@@ -1218,6 +1222,11 @@ const SettingsPage = () => {
           cursor: pointer;
         }
       `}</style>
+
+
+
+
+
         </div>
     )
 }
