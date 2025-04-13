@@ -295,7 +295,7 @@ export default function ProfileCard({ profile, onSwipe, activeTab, setActiveTab 
                 {/* Profile Info Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-2 pb-28 bg-gradient-to-t from-black/80 to-transparent">
 
-                    <div className="bg-white p-2 border-2 text-xl font-medium space-y-2 border-gray-800 min-h-52">
+                    <div className="bg-white p-2 border-2 text-xl font-medium space-y-2 border-gray-800 min-h-40">
 
                         {/* Name and Age */}
                         <div className="flex items-center justify-between">
