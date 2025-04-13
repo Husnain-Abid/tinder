@@ -696,7 +696,7 @@ const LeftSidebar = ({ activeTab, setActiveTab }) => {
                     )} */}
 
                     {/* Packages Tab Content */}
-                    {activeTab === "packages" && (
+                    {(activeTab === "packages" || activeTab === "detail" ) && (
                         <div className="p-4 bg-gray-50 ">
 
                             {/* Main Content */}

@@ -17,8 +17,14 @@ import image7 from "../../asset/image6.jpg"
 import image8 from "../../asset/image8.jpg"
 import image9 from "../../asset/image9.jpg"
 import TinderProfileExpandDesktop from "./TinderProfileExpandDesktop";
+import TinderDetailExpandDesktop from "./TinderDetailExpandDesktop";
 
 export default function DesktopHome() {
+
+
+
+    const [showAbout, setShowAbout] = useState(false)
+
 
 
 
@@ -31,6 +37,11 @@ export default function DesktopHome() {
             distance: "3 miles away",
             isActive: true,
             images: [image1, image2, image3],
+            status: "Single",        // Added single
+            gender: "Man",          // Added man, false because Mia is not a man
+            orientation: "Straight",      // Added straight
+            country: "Nepal",    // Added country
+            hobbies: ["Hiking", "Reading", "Yoga"],  // Added hobbies
         },
         {
             id: 2,
@@ -39,6 +50,11 @@ export default function DesktopHome() {
             distance: "1 mile away",
             isActive: false,
             images: [image4, image5, image7],
+            status: "Married",        // Added single
+            gender: "Woman",          // Added man, false because Mia is not a man
+            orientation: "Straight",      // Added straight
+            country: "USA",      // Added country
+            hobbies: ["Football", "Movies", "Cooking"],  // Added hobbies
         },
         {
             id: 3,
@@ -47,8 +63,17 @@ export default function DesktopHome() {
             distance: "5 miles away",
             isActive: true,
             images: [image6, image8, image9],
+            status: "Single",        // Added single
+            gender: "Man",          // Added man, false because Mia is not a man
+            orientation: "Not Straight",      // Added straight
+            country: "Canada",   // Added country
+            hobbies: ["Dancing", "Photography", "Traveling"],  // Added hobbies
         },
-    ]
+    ];
+
+
+
+
 
     // State for profiles and swipe history
     const [profiles, setProfiles] = useState(initialProfiles)
@@ -87,6 +112,9 @@ export default function DesktopHome() {
 
 
 
+
+
+
     return (
         <>
             {/* Desktop */}
@@ -99,10 +127,8 @@ export default function DesktopHome() {
                 <div className="flex flex-col flex-grow">
 
                     {/*  Profile Cards */}
-                    {(activeTab === "matches" || activeTab === "messages") &&
-
+                    {(activeTab === "matches" || activeTab === "messages") ?
                         (
-
                             <div className="relative flex-grow flex items-center justify-center z-0 bg-gray-100 p-4">
 
                                 {profiles.map((profile, index) => (
@@ -114,7 +140,7 @@ export default function DesktopHome() {
                                             display: index < currentIndex ? "none" : "block",
                                         }}
                                     >
-                                        <ProfileCard profile={profile} onSwipe={handleSwipe} activeTab={activeTab} setActiveTab={setActiveTab} />
+                                        <ProfileCard profile={profile} onSwipe={handleSwipe} activeTab={activeTab} setActiveTab={setActiveTab} showAbout={showAbout} setShowAbout={setShowAbout} />
                                     </div>
                                 ))}
 
@@ -127,12 +153,8 @@ export default function DesktopHome() {
                                 )}
 
                             </div>
-
-
-                        )}
-
-
-
+                        ) : ""
+                    }
 
 
                     {/* Profile Info Expanded View */}
@@ -140,6 +162,20 @@ export default function DesktopHome() {
                     {(activeTab === "packages") &&
                         <TinderProfileExpandDesktop activeTab={activeTab} setActiveTab={setActiveTab} />
                     }
+
+                    {(activeTab === "detail") &&
+                        <TinderDetailExpandDesktop  activeTab={activeTab} setActiveTab={setActiveTab} />
+                    }
+
+
+
+
+
+
+
+
+
+
 
 
                 </div>

@@ -20,6 +20,7 @@ import image7 from "../../asset/image6.jpg"
 import image8 from "../../asset/image8.jpg"
 import image9 from "../../asset/image9.jpg"
 import ResponsiveProfileCard from './ResponsiveProfileCard'
+import TinderDetailExpand from './TinderDetailExpand'
 
 
 
@@ -30,8 +31,15 @@ export default function MobileHome() {
 
   const [showProfileInfo, setShowProfileInfo] = useState(false)
 
+
   const toggleProfileInfo = () => {
     setShowProfileInfo(!showProfileInfo)
+  }
+
+  const [showAbout, setShowAbout] = useState(false)
+
+  const toggleAbout = () => {
+    setShowAbout(!showAbout)
   }
 
 
@@ -225,6 +233,11 @@ export default function MobileHome() {
       distance: "3 miles away",
       isActive: true,
       images: [image1, image2, image3],
+      status: "Single",        // Added single
+      gender: "Man",          // Added man, false because Mia is not a man
+      orientation: "Straight",      // Added straight
+      country: "Nepal",    // Added country
+      hobbies: ["Hiking", "Reading", "Yoga"],  // Added hobbies
     },
     {
       id: 2,
@@ -233,6 +246,11 @@ export default function MobileHome() {
       distance: "1 mile away",
       isActive: false,
       images: [image4, image5, image7],
+      status: "Married",        // Added single
+      gender: "Woman",          // Added man, false because Mia is not a man
+      orientation: "Straight",      // Added straight
+      country: "USA",      // Added country
+      hobbies: ["Football", "Movies", "Cooking"],  // Added hobbies
     },
     {
       id: 3,
@@ -241,8 +259,15 @@ export default function MobileHome() {
       distance: "5 miles away",
       isActive: true,
       images: [image6, image8, image9],
+      status: "Single",        // Added single
+      gender: "Man",          // Added man, false because Mia is not a man
+      orientation: "Not Straight",      // Added straight
+      country: "Canada",   // Added country
+      hobbies: ["Dancing", "Photography", "Traveling"],  // Added hobbies
     },
-  ]
+  ];
+
+
 
   // State for profiles and swipe history
   const [profiles, setProfiles] = useState(initialProfiles)
@@ -282,20 +307,24 @@ export default function MobileHome() {
 
     <div className=" flex md:hidden flex-col h-screen bg-gray-100">
       {/* Main Content Area */}
-      <div className="flex-grow overflow-y-auto pb-16">
-              
+      <div className={`flex-grow   ${(showProfileInfo || showAbout) ? "pb-0": "pb-16 overflow-y-auto  "}`}>
+
         {/* Home Tab Content */}
         {activeTab === "home" && (
           <div className="p-4">
             {/* Tinder Logo */}
 
 
-            <div className="mb-4 flex justify-between items-center">
+            <div className={` ${(showProfileInfo && showAbout) ? "mb-0" : "mb-4"}  flex justify-between items-center `}>
               <img src={redlogo} alt="logo" className='w-24' />
 
 
-              {showProfileInfo ? (
-                <div className='p-2 bg-white rounded-full' onClick={toggleProfileInfo}>
+              {(showProfileInfo || showAbout) ? (
+                <div className='p-2 bg-white rounded-full'  
+                onClick={() => {
+                  setShowProfileInfo(false);
+                  setShowAbout(false);
+                }}>
                   {/* Info Icon */}
                   <svg xmlns="http://www.w3.org/2000/svg" className="text-pink-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10" />
@@ -315,33 +344,65 @@ export default function MobileHome() {
 
             </div>
 
+            {(!showProfileInfo && !showAbout)  && (
+              <>
 
-            {/* Main Content - Profile Card */}
-            <div className="flex flex-col justify-center items-center " style={{ minHeight: "calc(100vh - 20vh)" }}>
-              {/* Profile Cards */}
-              <div className="relative flex-grow w-full flex items-center justify-center z-0 bg-gray-100 p-4">
-                {profiles.map((profile, index) => (
-                  <div
-                    key={profile.id}
-                    className={`absolute ${index < currentIndex ? "hidden" : ""}`}
-                    style={{
-                      zIndex: profiles.length - index,
-                      display: index < currentIndex ? "none" : "block",
-                    }}
-                  >
-                    <ResponsiveProfileCard profile={profile} onSwipe={handleSwipe} showProfileInfo={showProfileInfo} setShowProfileInfo={setShowProfileInfo} toggleProfileInfo={toggleProfileInfo} />
-                  </div>
-                ))}
+                {/* Main Content - Profile Card */}
 
-                {/* Show message when all profiles are swiped */}
-                {currentIndex >= profiles.length && (
-                  <div className="text-center p-8 bg-white rounded-lg shadow-md">
-                    <h2 className="text-2xl font-bold text-gray-800 mb-4">No more profiles</h2>
-                    <p className="text-gray-600">Check back later for more matches!</p>
+
+                <div className="flex flex-col justify-center items-center " style={{ minHeight: "calc(100vh - 20vh)" }}>
+                  {/* Profile Cards */}
+                  <div className="relative flex-grow w-full flex items-center justify-center z-0 bg-gray-100 p-4">
+                    {profiles.map((profile, index) => (
+                      <div
+                        key={profile.id}
+                        className={`absolute ${index < currentIndex ? "hidden" : ""}`}
+                        style={{
+                          zIndex: profiles.length - index,
+                          display: index < currentIndex ? "none" : "block",
+                        }}
+                      >
+                        <ResponsiveProfileCard profile={profile} onSwipe={handleSwipe} showProfileInfo={showProfileInfo} setShowProfileInfo={setShowProfileInfo} toggleProfileInfo={toggleProfileInfo} />
+                      </div>
+                    ))}
+
+                    {/* Show message when all profiles are swiped */}
+                    {currentIndex >= profiles.length && (
+                      <div className="text-center p-8 bg-white rounded-lg shadow-md">
+                        <h2 className="text-2xl font-bold text-gray-800 mb-4">No more profiles</h2>
+                        <p className="text-gray-600">Check back later for more matches!</p>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-            </div>
+
+
+
+                </div>
+
+
+
+
+                {/* Custom buttons start */}
+
+                <div className="flex items-center justify-between gap-4 bg-gray-100 py-2 px-4 mt-4 w-full">
+
+                  {/* Hide Button */}
+                  <button onClick={() => setShowAbout(true)}  className="bg-gray-800 text-white  px-12 border-2 border-gray-800  py-2 rounded-full text-sm font-medium hover:bg-white hover:text-gray-800">
+                    Detail
+                  </button>
+
+                  {/* Hide Button */}
+                  <button onClick={() => setShowProfileInfo(true)} className="bg-white   px-12 border-2 border-gray-800  py-2 rounded-full text-sm font-medium hover:bg-gray-800 hover:text-white">
+                    Profile
+                  </button>
+
+                </div>
+
+                {/* Custom buttons end */}
+
+              </>
+            )}
+
           </div>
 
         )}
@@ -1140,7 +1201,7 @@ export default function MobileHome() {
 
 
         )}
-        
+
       </div>
 
       {/* Bottom Navigation */}
@@ -1252,10 +1313,12 @@ export default function MobileHome() {
 
 
 
+      {/* Profile Info Expanded View */}
+      {showProfileInfo && <TinderProfileExpand showProfileInfo={showProfileInfo} setShowProfileInfo={setShowProfileInfo} toggleProfileInfo={toggleProfileInfo} />}
 
 
       {/* Profile Info Expanded View */}
-      {showProfileInfo && <TinderProfileExpand showProfileInfo={showProfileInfo} setShowProfileInfo={setShowProfileInfo} toggleProfileInfo={toggleProfileInfo} />}
+      {showAbout && <TinderDetailExpand  showAbout={showAbout} setShowAbout={setShowAbout} toggleAbout={toggleAbout} />}
 
 
 

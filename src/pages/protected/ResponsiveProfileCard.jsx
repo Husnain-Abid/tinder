@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import TinderProfileExpand from './TinderProfileExpand'
+import ActionBar from './ActionBar'
 
 export default function ResponsiveProfileCard({ profile, onSwipe, showProfileInfo, setShowProfileInfo, toggleProfileInfo }) {
 
@@ -229,11 +230,6 @@ export default function ResponsiveProfileCard({ profile, onSwipe, showProfileInf
 
 
 
-
-
-
-
-
                 {/* Swipe Action Overlay */}
                 {swipeAction && (
                     <>
@@ -311,15 +307,15 @@ export default function ResponsiveProfileCard({ profile, onSwipe, showProfileInf
                 </div>
 
                 {/* Profile Info Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 pb-28 bg-gradient-to-t from-black/80 to-transparent">
+                <div className="absolute bottom-0 left-0 right-0 p-4 pb-16 bg-gradient-to-t from-black/80 to-transparent">
                     {/* Recently Active */}
-                    <div className="flex items-center mb-2">
+                    <div className="flex items-center ">
                         <div className={`h-2 w-2 rounded-full ${profile.isActive ? "bg-green-500" : "bg-gray-400"} mr-2`}></div>
                         <span className="text-white text-sm">{profile.isActive ? "Recently Active" : "Inactive"}</span>
                     </div>
 
                     {/* Name and Age */}
-                    <div className="flex items-center">
+                    <div className="flex items-center ">
                         <h2 className="text-3xl font-bold text-white mr-2">{profile.name}</h2>
                         <span className="text-2xl text-white">{profile.age}</span>
 
@@ -350,6 +346,34 @@ export default function ResponsiveProfileCard({ profile, onSwipe, showProfileInf
                         </svg>
                         <span className="text-white ml-1">{profile.distance}</span>
                     </div>
+
+                    {/*Gender ,Single,Straight*/}
+                    <div className="flex items-center text-sm gap-2 mt-1">
+                        <span className="text-white  font-medium">{profile.gender} </span>
+
+                        <span className="text-white font-medium">{profile.status}</span>
+                        <span className="text-white font-medium">{profile.orientation}</span>
+                    </div>
+
+
+
+                    {/* Additional Info: Single, Man, Straight, Country, Hobbies */}
+
+                    {/* Country */}
+                    <div className="flex items-center text-sm font-medium ">
+                        <span className="text-white ">Country: </span>
+                        <span className="text-white text-xs mt-1 ml-2">{profile.country}</span>
+                    </div>
+
+                    {/* Hobbies */}
+                    <div className="flex items-center text-sm font-medium">
+                        <span className="text-white ">Hobbies: </span>
+                        <span className="text-white text-xs ml-2">{profile.hobbies.join(", ")}</span>
+                    </div>
+
+
+
+
                 </div>
 
 
@@ -360,7 +384,7 @@ export default function ResponsiveProfileCard({ profile, onSwipe, showProfileInf
 
             {/* Action Buttons */}
 
-            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex items-center space-x-2 md:space-x-4 z-50">
+            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-2 md:space-x-4 z-50">
                 {/* Rewind Button */}
                 <button className="bg-white p-4 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-110">
                     <svg xmlns="http://www.w3.org/2000/svg" className="font-bold" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -400,15 +424,6 @@ export default function ResponsiveProfileCard({ profile, onSwipe, showProfileInf
                 </button>
 
             </div>
-
-
-
-
-
-
-
-
-
 
 
 

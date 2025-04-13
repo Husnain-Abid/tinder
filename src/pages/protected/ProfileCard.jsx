@@ -243,6 +243,9 @@ export default function ProfileCard({ profile, onSwipe, activeTab, setActiveTab 
                     </div>
                 )}
 
+
+
+
                 {/* Profile Image */}
                 <div className="relative w-full h-full z-0">
                     <img
@@ -287,8 +290,11 @@ export default function ProfileCard({ profile, onSwipe, activeTab, setActiveTab 
                     </button>
                 </div>
 
+
+
                 {/* Profile Info Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 pb-28 bg-gradient-to-t from-black/80 to-transparent">
+
                     {/* Recently Active */}
                     <div className="flex items-center mb-2">
                         <div className={`h-2 w-2 rounded-full ${profile.isActive ? "bg-green-500" : "bg-gray-400"} mr-2`}></div>
@@ -359,7 +365,36 @@ export default function ProfileCard({ profile, onSwipe, activeTab, setActiveTab 
                         </svg>
                         <span className="text-white ml-1">{profile.distance}</span>
                     </div>
+
+                    {/*Gender ,Single,Straight*/}
+                    <div className="flex items-center gap-2 mt-1">
+                        <span className="text-white text-base font-medium">{profile.gender} </span>
+
+                        <span className="text-white font-medium">{profile.status}</span>
+                        <span className="text-white font-medium">{profile.orientation}</span>
+                    </div>
+
+
+
+
+
+                    {/* Additional Info: Single, Man, Straight, Country, Hobbies */}
+
+                    {/* Country */}
+                    <div className="flex items-center font-medium mt-1">
+                        <span className="text-white  ">Country: </span>
+                        <span className="text-white  text-sm mt-1 ml-2">{profile.country}</span>
+                    </div>
+
+                    {/* Hobbies */}
+                    <div className="flex items-center font-medium">
+                        <span className="text-white ">Hobbies: </span>
+                        <span className="text-white text-sm mt-1 ml-2">{profile.hobbies.join(", ")}</span>
+                    </div>
+
                 </div>
+
+
 
 
 
@@ -417,6 +452,28 @@ export default function ProfileCard({ profile, onSwipe, activeTab, setActiveTab 
 
             </div>
 
+
+
+            {/* Custom buttons start */}
+
+            <div className="flex items-center justify-center gap-8 bg-gray-100 py-2 px-4 mt-4 w-full">
+
+                {/* Hide Button */}
+                <button onClick={() => setActiveTab("detail")} className="bg-gray-800 text-white  px-12 border-2 border-gray-800  py-2 rounded-full text-sm font-medium hover:bg-white hover:text-gray-800">
+                    Detail
+                </button>
+
+                {/* Hide Button */}
+                <button onClick={() => setActiveTab("packages")}   className="bg-white   px-12 border-2 border-gray-800  py-2 rounded-full text-sm font-medium hover:bg-gray-800 hover:text-white">
+                    Profile
+                </button>
+
+            </div>
+
+            {/* Custom buttons end */}
+
+
+
             <ActionBar
                 onHide={() => resetSwipe()}
                 onNope={() => handleActionButton("nope")}
@@ -427,7 +484,6 @@ export default function ProfileCard({ profile, onSwipe, activeTab, setActiveTab 
 
                 onNextPhoto={(e) => nextImage(e)}  // Ensure you pass the event here
             // onPreviousPhoto={(e) => prevImage(e)}  // Similarly for previous
-
 
             />
 

@@ -199,7 +199,7 @@ const TinderProfileExpandDesktop = ({ showProfileInfo, setShowProfileInfo, toggl
                     </div>
 
                     {/* About Me Section */}
-                    <div className="my-4 p-4 bg-slate-50 rounded-md">
+                    {/* <div className="my-4 p-4 bg-slate-50 rounded-md">
                         <div className="flex items-center text-gray-500 mb-1">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -218,7 +218,7 @@ const TinderProfileExpandDesktop = ({ showProfileInfo, setShowProfileInfo, toggl
                             <span className="text-sm">About me</span>
                         </div>
                         <p className="ml-6 text-gray-800">Night 🌃 coffee</p>
-                    </div>
+                    </div> */}
 
                     {/* Essentials Section */}
                     <div className="my-4 p-4 bg-slate-50 rounded-md">

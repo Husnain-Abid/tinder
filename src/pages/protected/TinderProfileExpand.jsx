@@ -6,7 +6,7 @@ import avatar from "../../asset/image3.jpg"
 
 
 const TinderProfileExpand = ({ showProfileInfo, setShowProfileInfo, toggleProfileInfo }) => {
-    
+
     const [showFullProfile, setShowFullProfile] = useState(true)
     const [showReportModal, setShowReportModal] = useState(false)
 
@@ -198,27 +198,6 @@ const TinderProfileExpand = ({ showProfileInfo, setShowProfileInfo, toggleProfil
                         </div>
                     </div>
 
-                    {/* About Me Section */}
-                    <div className="my-4 p-4 bg-slate-50 rounded-md">
-                        <div className="flex items-center text-gray-500 mb-1">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-4 w-4 mr-2"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                                />
-                            </svg>
-                            <span className="text-sm">About me</span>
-                        </div>
-                        <p className="ml-6 text-gray-800">Night 🌃 coffee</p>
-                    </div>
 
                     {/* Essentials Section */}
                     <div className="my-4 p-4 bg-slate-50 rounded-md">
