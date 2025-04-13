@@ -293,104 +293,55 @@ export default function ProfileCard({ profile, onSwipe, activeTab, setActiveTab 
 
 
                 {/* Profile Info Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 pb-28 bg-gradient-to-t from-black/80 to-transparent">
+                <div className="absolute bottom-0 left-0 right-0 p-2 pb-28 bg-gradient-to-t from-black/80 to-transparent">
 
-                    {/* Recently Active */}
-                    <div className="flex items-center mb-2">
-                        <div className={`h-2 w-2 rounded-full ${profile.isActive ? "bg-green-500" : "bg-gray-400"} mr-2`}></div>
-                        <span className="text-white text-sm">{profile.isActive ? "Recently Active" : "Inactive"}</span>
-                    </div>
+                    <div className="bg-white p-2 border-2 text-xl font-medium space-y-2 border-gray-800 min-h-52">
 
-                    {/* Name and Age */}
-                    <div className="flex items-center">
-                        <h2 className="text-3xl font-bold text-white mr-2">{profile.name}</h2>
-                        <span className="text-2xl text-white">{profile.age}</span>
+                        {/* Name and Age */}
+                        <div className="flex items-center justify-between">
+                            <div>
+                                <span className=" ">Name:</span>
+                                <span className=" ml-1">{profile.name}</span>
+                            </div>
 
-                        {/* Info Button */}
+                            <div>
+                                <span className=" ">Age:</span>
+                                <span className=" ml-1">{profile.age}</span>
+                            </div>
+                        </div>
 
-                        {(activeTab === "matches" || activeTab === "messages") ?
+                        {/* Gender and Distance */}
+                        <div className="flex items-center justify-between">
+                            <div>
+                                <span className=" ">Gender:</span>
+                                <span className=" ml-1">{profile.gender}</span>
+                            </div>
 
-                            (
-                                <button className="ml-auto bg-black/30 p-1 rounded-full" onClick={() => setActiveTab("packages")} >
+                            <div>
+                                {/* <span className=" font-medium">Age:</span> */}
+                                <span className=" ml-1">{profile.distance}</span>
+                            </div>
+                        </div>
+
+                        {/* Name and Age */}
+                        <div className="flex items-center justify-between">
+                            <div>
+                                <span className=" ml-1">{profile.orientation}</span>
+                            </div>
+
+                            <div className="w-2/6 text-end">
+                                <span className=" font- ">Hopes:</span>
+                                <span className=" text-base ml-2">{profile.hobbies.join(", ")}</span>
+                            </div>
+                        </div>
 
 
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="text-white" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m16 12-4-4-4 4"></path><path d="M12 16V8"></path></svg>
-                                </button>
 
-                            ) :
-                            (
-                                <button className="ml-auto bg-black/30 p-1 rounded-full" onClick={() => setActiveTab("matches")}>
-
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="text-white lucide lucide-circle-arrow-down-icon lucide-circle-arrow-down"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    >
-                                        <circle cx="12" cy="12" r="10" />
-                                        <path d="M12 8v8" />
-                                        <path d="m8 12 4 4 4-4" />
-                                    </svg>
-
-                                </button>
-
-                            )
-                        }
 
 
                     </div>
 
-                    {/* Location */}
-                    <div className="flex items-center mt-1">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5 text-white"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                            />
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        <span className="text-white ml-1">{profile.distance}</span>
-                    </div>
 
-                    {/*Gender ,Single,Straight*/}
-                    <div className="flex items-center gap-2 mt-1">
-                        <span className="text-white text-base font-medium">{profile.gender} </span>
-
-                        <span className="text-white font-medium">{profile.status}</span>
-                        <span className="text-white font-medium">{profile.orientation}</span>
-                    </div>
-
-
-
-
-
-                    {/* Additional Info: Single, Man, Straight, Country, Hobbies */}
-
-                    {/* Country */}
-                    <div className="flex items-center font-medium mt-1">
-                        <span className="text-white  ">Country: </span>
-                        <span className="text-white  text-sm mt-1 ml-2">{profile.country}</span>
-                    </div>
-
-                    {/* Hobbies */}
-                    <div className="flex items-center font-medium">
-                        <span className="text-white ">Hobbies: </span>
-                        <span className="text-white text-sm mt-1 ml-2">{profile.hobbies.join(", ")}</span>
-                    </div>
 
                 </div>
 
@@ -464,7 +415,7 @@ export default function ProfileCard({ profile, onSwipe, activeTab, setActiveTab 
                 </button>
 
                 {/* Hide Button */}
-                <button onClick={() => setActiveTab("packages")}   className="bg-white   px-12 border-2 border-gray-800  py-2 rounded-full text-sm font-medium hover:bg-gray-800 hover:text-white">
+                <button onClick={() => setActiveTab("packages")} className="bg-white   px-12 border-2 border-gray-800  py-2 rounded-full text-sm font-medium hover:bg-gray-800 hover:text-white">
                     Profile
                 </button>
 
