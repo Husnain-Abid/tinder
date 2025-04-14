@@ -224,48 +224,49 @@ export default function MobileHome() {
   // profile card start
 
 
-  // Initial profiles data
-  const initialProfiles = [
-    {
-      id: 1,
-      name: "Huddha",
-      age: 32,
-      distance: "3 miles away",
-      isActive: true,
-      images: [image1, image2, image3],
-      status: "Single",        // Added single
-      gender: "Man",          // Added man, false because Mia is not a man
-      orientation: "Straight",      // Added straight
-      country: "Nepal",    // Added country
-      hobbies: ["Hiking", "Reading", "Yoga"],  // Added hobbies
-    },
-    {
-      id: 2,
-      name: "Ramsey",
-      age: 20,
-      distance: "1 mile away",
-      isActive: false,
-      images: [image4, image5, image7],
-      status: "Married",        // Added single
-      gender: "Woman",          // Added man, false because Mia is not a man
-      orientation: "Straight",      // Added straight
-      country: "USA",      // Added country
-      hobbies: ["Football", "Movies", "Cooking"],  // Added hobbies
-    },
-    {
-      id: 3,
-      name: "Mia",
-      age: 28,
-      distance: "5 miles away",
-      isActive: true,
-      images: [image6, image8, image9],
-      status: "Single",        // Added single
-      gender: "Man",          // Added man, false because Mia is not a man
-      orientation: "Not Straight",      // Added straight
-      country: "Canada",   // Added country
-      hobbies: ["Dancing", "Photography", "Traveling"],  // Added hobbies
-    },
+    // Initial profiles data
+    const initialProfiles = [
+      {
+          id: 1,
+          name: "Huddha",
+          age: 32,
+          distance: "13 miles away",
+          isActive: true,
+          images: [image1, image2, image3],
+          status: "Single",        // Added single
+          gender: "Man",          // Added man, false because Mia is not a man
+          orientation: "Straight",      // Added straight
+          country: "Nepal",    // Added country
+          hobbies: ["Hiking", "Reading", "Yoga"],  // Added hobbies
+      },
+      {
+          id: 2,
+          name: "Ramsey",
+          age: 20,
+          distance: "11 miles away",
+          isActive: false,
+          images: [image4, image5, image7],
+          status: "Married",        // Added single
+          gender: "Woman",          // Added man, false because Mia is not a man
+          orientation: "Straight",      // Added straight
+          country: "USA",      // Added country
+          hobbies: ["Hiking", "Reading", "Yoga"],  // Added hobbies
+      },
+      {
+          id: 3,
+          name: "Mia",
+          age: 28,
+          distance: "15 miles away",
+          isActive: true,
+          images: [image6, image8, image9],
+          status: "Single",        // Added single
+          gender: "Man",          // Added man, false because Mia is not a man
+          orientation: "Straight",      // Added straight
+          country: "Canada",   // Added country
+          hobbies: ["Hiking", "Reading", "Yoga"],  // Added hobbies
+      },
   ];
+
 
 
 

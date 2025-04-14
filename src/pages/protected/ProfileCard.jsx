@@ -247,7 +247,7 @@ export default function ProfileCard({ profile, onSwipe, activeTab, setActiveTab 
 
 
                 {/* Profile Image */}
-                <div className="relative w-full h-full z-0">
+                <div className="relative w-full h-1/2 z-0">
                     <img
                         src={profile.images[currentImageIndex] || "/placeholder.svg"}
                         alt={`${profile.name}'s profile`}
@@ -293,12 +293,12 @@ export default function ProfileCard({ profile, onSwipe, activeTab, setActiveTab 
 
 
                 {/* Profile Info Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-2 pb-28 bg-gradient-to-t from-black/80 to-transparent">
+                <div className="p-2 pb-28 bg-black  h-full">
 
-                    <div className="bg-white p-2 border-2 text-xl font-medium space-y-2 border-gray-800 min-h-40">
+                    <div className="bg-white p-2 border-2 text-xl font-medium space-y-2 border-gray-800 h-[42%]">
 
                         {/* Name and Age */}
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-start justify-between">
                             <div>
                                 <span className=" ">Name:</span>
                                 <span className=" ml-1">{profile.name}</span>
@@ -311,32 +311,30 @@ export default function ProfileCard({ profile, onSwipe, activeTab, setActiveTab 
                         </div>
 
                         {/* Gender and Distance */}
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-start justify-between">
                             <div>
                                 <span className=" ">Gender:</span>
-                                <span className=" ml-1">{profile.gender}</span>
+                                <span className="ml-1">{profile.gender}</span>
                             </div>
 
                             <div>
                                 {/* <span className=" font-medium">Age:</span> */}
-                                <span className=" ml-1">{profile.distance}</span>
+                                <span className="text-start">{profile.distance}</span>
                             </div>
                         </div>
 
                         {/* Name and Age */}
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-start justify-between">
                             <div>
+                                <span className=" ">Orientation:</span>
                                 <span className=" ml-1">{profile.orientation}</span>
                             </div>
 
                             <div className="w-2/6 text-end">
-                                <span className=" font- ">Hopes:</span>
-                                <span className=" text-base ml-2">{profile.hobbies.join(", ")}</span>
+                                <span >Hopes:</span>
+                                <span >{profile.hobbies.join(", ")}</span>
                             </div>
                         </div>
-
-
-
 
 
                     </div>
