@@ -317,7 +317,7 @@ export default function ResponsiveProfileCard({ profile, onSwipe, showProfileInf
                                 <span className=" font-medium">Name:</span>
                                 <span className=" ml-1">{profile.name}</span>
                             </div>
-                            
+
                             <div>
                                 <span className=" font-medium">Age:</span>
                                 <span className=" ml-1">{profile.age}</span>
@@ -328,8 +328,8 @@ export default function ResponsiveProfileCard({ profile, onSwipe, showProfileInf
                         {/* Gender and Distance */}
                         <div className="flex items-center justify-between">
                             <div>
-                                <span className=" font-medium">Gender:</span>
-                                <span className=" ml-1">{profile.gender}</span>
+                                <span className=" ml-1">{profile.orientation}</span>
+
                             </div>
 
                             <div>
@@ -341,11 +341,12 @@ export default function ResponsiveProfileCard({ profile, onSwipe, showProfileInf
                         {/* orientation and hoppies */}
                         <div className="flex items-start justify-between">
                             <div>
-                                <span className=" ml-1">{profile.orientation}</span>
+                                <span className=" font-medium">Gender:</span>
+                                <span className=" ml-1">{profile.gender}</span>
                             </div>
 
                             <div className="w-3/6 text-end">
-                                <span >Hopes:</span>
+                                <span >Hobbies:</span>
                                 <span >{profile.hobbies.join(", ")}</span>
 
                             </div>

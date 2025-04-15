@@ -313,9 +313,11 @@ export default function ProfileCard({ profile, onSwipe, activeTab, setActiveTab 
                         {/* Gender and Distance */}
                         <div className="flex items-start justify-between">
                             <div>
-                                <span className=" ">Gender:</span>
-                                <span className="ml-1">{profile.gender}</span>
+                                <span className=" ">Orientation:</span>
+                                <span className=" ml-1">{profile.orientation}</span>
                             </div>
+
+
 
                             <div>
                                 {/* <span className=" font-medium">Age:</span> */}
@@ -326,12 +328,12 @@ export default function ProfileCard({ profile, onSwipe, activeTab, setActiveTab 
                         {/* orientation and hoppies */}
                         <div className="flex items-start justify-between">
                             <div>
-                                <span className=" ">Orientation:</span>
-                                <span className=" ml-1">{profile.orientation}</span>
+                                <span className=" ">Gender:</span>
+                                <span className="ml-1">{profile.gender}</span>
                             </div>
 
                             <div className="w-2/6 text-end">
-                                <span >Hopes:</span>
+                                <span >Hobbies:</span>
                                 <span >{profile.hobbies.join(", ")}</span>
                             </div>
                         </div>
