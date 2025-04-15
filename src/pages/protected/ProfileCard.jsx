@@ -323,7 +323,7 @@ export default function ProfileCard({ profile, onSwipe, activeTab, setActiveTab 
                             </div>
                         </div>
 
-                        {/* Name and Age */}
+                        {/* orientation and hoppies */}
                         <div className="flex items-start justify-between">
                             <div>
                                 <span className=" ">Orientation:</span>

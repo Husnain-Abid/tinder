@@ -1,5 +1,5 @@
 import { useState } from "react"
-import image1 from "../../asset/image1.jpeg"
+import image1 from "../../asset/image1.1.jpg"
 import { useNavigate } from "react-router-dom";
 
 

@@ -263,7 +263,7 @@ export default function ResponsiveProfileCard({ profile, onSwipe, showProfileInf
                 )}
 
                 {/* Profile Image */}
-                <div className="relative w-full h-full z-0">
+                <div className="relative w-full h-1/2 z-0">
                     <img
                         src={profile.images[currentImageIndex] || "/placeholder.svg"}
                         alt={`${profile.name}'s profile`}
@@ -307,9 +307,9 @@ export default function ResponsiveProfileCard({ profile, onSwipe, showProfileInf
                 </div>
 
                 {/* Profile Info Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-2 pb-16  bg-gradient-to-t from-black/80 to-transparent">
+                <div className="relative p-2 pb-16  bg-black h-full">
 
-                    <div className="bg-white p-2 border-2 font-medium text-base space-y-1 border-gray-800 min-h-32">
+                    <div className="bg-white p-2 border-2 text-lg font-medium space-y-2 border-gray-800 h-[42%]">
 
                         {/* Name and Age */}
                         <div className="flex items-center justify-between">
@@ -317,11 +317,12 @@ export default function ResponsiveProfileCard({ profile, onSwipe, showProfileInf
                                 <span className=" font-medium">Name:</span>
                                 <span className=" ml-1">{profile.name}</span>
                             </div>
-
+                            
                             <div>
                                 <span className=" font-medium">Age:</span>
                                 <span className=" ml-1">{profile.age}</span>
                             </div>
+
                         </div>
 
                         {/* Gender and Distance */}
@@ -337,15 +338,15 @@ export default function ResponsiveProfileCard({ profile, onSwipe, showProfileInf
                             </div>
                         </div>
 
-                        {/* Name and Age */}
-                        <div className="flex items-center justify-between">
+                        {/* orientation and hoppies */}
+                        <div className="flex items-start justify-between">
                             <div>
                                 <span className=" ml-1">{profile.orientation}</span>
                             </div>
 
-                            <div className="w-2/6 text-end">
-                                <span className=" font-medium ">Hopes:</span>
-                                <span className=" text-sm ml-2">{profile.hobbies.join(", ")}</span>
+                            <div className="w-3/6 text-end">
+                                <span >Hopes:</span>
+                                <span >{profile.hobbies.join(", ")}</span>
 
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import avatar from "../../asset/image3.jpg"
+import avatar from "../../asset/image1.3.jpg"
 import redlogo from "../../asset/logo.png"
 import { redirect, useNavigate } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -8,9 +8,9 @@ import TinderProfileExpand from './TinderProfileExpand'
 
 
 
-import image1 from "../../asset/image1.jpeg"
-import image3 from "../../asset/image2.jpg"
-import image2 from "../../asset/image3.jpg"
+import image1 from "../../asset/image1.1.jpg"
+import image3 from "../../asset/image1.2.jpg"
+import image2 from "../../asset/image1.3.jpg"
 
 import image4 from "../../asset/image4.jpg"
 import image5 from "../../asset/image5.jpg"
